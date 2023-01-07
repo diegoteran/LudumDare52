@@ -4,7 +4,7 @@ func setValues():
 	upgradeName = "Random Weapon"
 	description  = "Lets get wacky"
 	iconPath = "res://assets/art/programmerArt/greenHealthIGuess.png"
-	.setValues();
+	.setValues()
 
 func apply_upgrade():
-	print("this is going to be wild");
+	print("this is going to be wild")

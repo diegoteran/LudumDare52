@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Globals="*res://globals/globals.gd"
 UpgradeDict="*res://globals/upgradeDict.gd"
+LevelManager="*res://globals/levelManager.gd"
 
 [display]
 

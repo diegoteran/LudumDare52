@@ -4,7 +4,7 @@ export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
-export var MAX_HP = 5;
+export var MAX_HP = 5
 var hp = MAX_HP setget set_hp
 
 enum {
@@ -30,19 +30,19 @@ func set_hp(new_value):
 	if new_value != hp:
 		hp = new_value
 		healthBar.value = hp;
-		healthBar.visible = healthBar.value < MAX_HP;
+		healthBar.visible = healthBar.value < MAX_HP
 		if hp <= 0:
-			on_death();
-			state = DEAD;
+			on_death()
+			state = DEAD
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = Globals.get_player()
-	$HealthBar.max_value = MAX_HP;
+	$HealthBar.max_value = MAX_HP
 
 func _physics_process(delta):
 	if Globals.paused:
-		return;
+		return
 	debug.text = str(state)
 	
 	if state == DEAD:
@@ -76,12 +76,13 @@ func hit_something():
 	print("HIT THE HUMAN")
 
 func on_death():
-	queue_free();
+	LevelManager.enemyDied()
+	queue_free()
 
 func _on_HurtBox_area_entered(area):
-	var newHp = max(0, hp - area.damage);
+	var newHp = max(0, hp - area.damage)
 	print("enemy hit for " + str(area.damage))
-	set_hp(newHp);
-	knockback += area.knockback * area.knockbackDirection;
-	area.get_parent().hit_something();
+	set_hp(newHp)
+	knockback += area.knockback * area.knockbackDirection
+	area.get_parent().hit_something()
 	pass # Replace with function body.
