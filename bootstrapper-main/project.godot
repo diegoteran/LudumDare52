@@ -1,0 +1,180 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "SurfacesTilemap",
+"class": "CollidableTilemap",
+"language": "GDScript",
+"path": "res://src/tiles/collidable_tilemap.gd"
+}, {
+"base": "SurfacesTileset",
+"class": "CollidableTileset",
+"language": "GDScript",
+"path": "res://src/tiles/collidable_tileset.gd"
+}, {
+"base": "SurfacerAnnotators",
+"class": "GameAnnotators",
+"language": "GDScript",
+"path": "res://src/gui/game_annotators.gd"
+}, {
+"base": "Reference",
+"class": "GameDefaultAnnotationParameters",
+"language": "GDScript",
+"path": "res://src/config/game_default_annotation_parameters.gd"
+}, {
+"base": "Reference",
+"class": "GameDefaultColors",
+"language": "GDScript",
+"path": "res://src/config/game_default_colors.gd"
+}, {
+"base": "SurfacerFrameworkGlobal",
+"class": "GameInterface",
+"language": "GDScript",
+"path": "res://src/global/game_global.gd"
+}, {
+"base": "SurfacerLevel",
+"class": "GameLevel",
+"language": "GDScript",
+"path": "res://src/levels/game_level.gd"
+}, {
+"base": "FrameworkMetadata",
+"class": "GameMetadata",
+"language": "GDScript",
+"path": "res://src/config/game_metadata.gd"
+}, {
+"base": "FrameworkPlugin",
+"class": "GamePlugin",
+"language": "GDScript",
+"path": "res://addons/game/src/plugin/game_plugin.gd"
+}, {
+"base": "FrameworkSchema",
+"class": "GameSchema",
+"language": "GDScript",
+"path": "res://src/config/game_schema.gd"
+}, {
+"base": "SurfacerHud",
+"class": "Hud",
+"language": "GDScript",
+"path": "res://src/gui/hud.gd"
+}, {
+"base": "Screen",
+"class": "LdLoadingScreen",
+"language": "GDScript",
+"path": "res://src/gui/ld_loading_screen.gd"
+}, {
+"base": "SurfacerLevelConfig",
+"class": "LevelConfig",
+"language": "GDScript",
+"path": "res://src/config/level_config.gd"
+}, {
+"base": "SurfacerLevelSession",
+"class": "LevelSession",
+"language": "GDScript",
+"path": "res://src/config/level_session.gd"
+}, {
+"base": "ScaffolderConfiguredImage",
+"class": "LoadingImage",
+"language": "GDScript",
+"path": "res://src/gui/loading_image.gd"
+}, {
+"base": "Reference",
+"class": "Main",
+"language": "GDScript",
+"path": "res://src/global/main.gd"
+}, {
+"base": "SurfacerCharacter",
+"class": "TestCharacter",
+"language": "GDScript",
+"path": "res://src/characters/test_character/test_character.gd"
+}, {
+"base": "SurfacerCharacter",
+"class": "TestCharacter2",
+"language": "GDScript",
+"path": "res://src/characters/test_character2/test_character2.gd"
+}, {
+"base": "Node",
+"class": "ThirdPartyLicenses",
+"language": "GDScript",
+"path": "res://src/config/third_party_licenses.gd"
+} ]
+_global_script_class_icons={
+"CollidableTilemap": "",
+"CollidableTileset": "",
+"GameAnnotators": "",
+"GameDefaultAnnotationParameters": "",
+"GameDefaultColors": "",
+"GameInterface": "",
+"GameLevel": "",
+"GameMetadata": "",
+"GamePlugin": "",
+"GameSchema": "",
+"Hud": "",
+"LdLoadingScreen": "",
+"LevelConfig": "",
+"LevelSession": "",
+"LoadingImage": "",
+"Main": "",
+"TestCharacter": "",
+"TestCharacter2": "",
+"ThirdPartyLicenses": ""
+}
+
+[application]
+
+config/name="Ludum Dare 51"
+run/main_scene="res://src/global/main.tscn"
+boot_splash/image="res://addons/scaffolder/assets/images/logos/godot_logo_splash.png"
+boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
+config/icon="res://assets/images/device_icons/icon_512.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
+
+[autoload]
+
+Sc="*res://addons/scaffolder/src/global/sc.gd"
+Pl="*res://addons/scaffolder/addons/plugger/src/pl.gd"
+St="*res://addons/surface_tiler/src/global/st.gd"
+Su="*res://addons/surfacer/src/global/su.gd"
+Game="*res://src/global/game_global.gd"
+
+[display]
+
+window/size/height=768
+window/handheld/orientation="sensor"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/scaffolder/plugin.cfg", "res://addons/surface_tiler/plugin.cfg", "res://addons/surfacer/plugin.cfg" )
+
+[input_devices]
+
+pointing/ios/touch_delay=0.005
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_render/layer_2="character"
+2d_physics/layer_1="surfaces_tilemaps"
+
+[logging]
+
+file_logging/enable_file_logging=true
+
+[physics]
+
+common/physics_fps=60.0
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=1
+quality/intended_usage/framebuffer_allocation.mobile=1
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.270588, 0.239216, 0.188235, 1 )
