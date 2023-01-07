@@ -14,9 +14,8 @@ var level_manifest := {
         is_test_level = true,
         sort_priority = -100,
         unlock_conditions = "unlocked",
-        scene_path = LEVELS_PATH_PREFIX + "level0.tscn",
+        scene_path = LEVELS_PATH_PREFIX + "foo_level.tscn",
         platform_graph_character_category_names = [
-            "test_character",
         ],
         cell_size = Vector2(32.0, 32.0),
         # FIXME: -------------------

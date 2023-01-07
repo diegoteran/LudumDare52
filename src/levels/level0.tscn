@@ -34,5 +34,4 @@ character_name = "test_character"
 character_name = "test_character"
 
 [node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0, 1, 0.0999999, 0.7 )
 character_categories = 0

@@ -245,20 +245,6 @@ func _set_level_id(value: String) -> void:
     _update_session_in_editor()
 
 
-func _establish_boundaries() -> void:
-    level_bounds = _get_combined_surfaces_region()
-    camera_bounds = level_bounds.grow_individual(
-            Sc.levels.default_camera_bounds_level_margin.left,
-            Sc.levels.default_camera_bounds_level_margin.top,
-            Sc.levels.default_camera_bounds_level_margin.right,
-            Sc.levels.default_camera_bounds_level_margin.bottom)
-    character_bounds = level_bounds.grow_individual(
-            Sc.levels.default_character_bounds_level_margin.left,
-            Sc.levels.default_character_bounds_level_margin.top,
-            Sc.levels.default_character_bounds_level_margin.right,
-            Sc.levels.default_character_bounds_level_margin.bottom)
-
-
 func _get_combined_surfaces_region() -> Rect2:
     var tile_maps := \
             get_tree().get_nodes_in_group(SurfacesTilemap.GROUP_NAME_SURFACES)

@@ -24,14 +24,8 @@ var active_player_character: ScaffolderCharacter \
 var _active_player_character: ScaffolderCharacter
 var _previous_active_player_character: ScaffolderCharacter
 
-var level_bounds: Rect2
-var camera_bounds: Rect2
-var character_bounds: Rect2
-
 var touch_listener: LevelTouchListener
 var level_control_press_controller: LevelControlPressController
-var camera: ScaffolderCamera
-var _default_camera: ScaffolderCamera
 
 var session: ScaffolderLevelSession
 
@@ -59,7 +53,6 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
     _is_ready = true
-    _establish_boundaries()
     _update_editor_configuration()
     Sc.device.connect(
             "display_resized",
@@ -88,8 +81,6 @@ func _start() -> void:
     var includes_default_player_character := _add_default_player_character()
     _add_npcs()
     
-    _set_default_camera()
-    
     call_deferred("_on_started")
 
 
@@ -99,7 +90,6 @@ func _on_started() -> void:
     Sc.levels.session._level_start_play_time_scaled = start_time_scaled
     Sc.levels.session._level_start_play_time_unscaled = start_time_unscaled
     Sc.logger.print("Level started:               %8.3f" % start_time_unscaled)
-    camera.print_current_state()
 
 
 func _add_default_player_character() -> bool:
@@ -176,8 +166,6 @@ func _destroy() -> void:
         for character in characters[character_name]:
             character._destroy()
     _set_active_player_character(null)
-    if is_instance_valid(camera):
-        camera._destroy()
     if is_instance_valid(touch_listener):
         touch_listener._destroy()
     if is_instance_valid(level_control_press_controller):
@@ -283,44 +271,6 @@ func register_spawn_position(
         exclusive_spawn_positions.push_back(spawn_position)
 
 
-func swap_camera(
-        camera_or_class,
-        matches_previous_camera_pan_and_zoom: bool,
-        destroys_previous_camera := false) -> void:
-    var previous_camera := camera
-    var previous_class: Script = \
-            previous_camera.get_script() if \
-            is_instance_valid(previous_camera) else \
-            null
-    var next_class: Script = \
-            camera_or_class if \
-            camera_or_class is Script else \
-            camera_or_class.get_script()
-    if previous_class == next_class:
-        # No change.
-        return
-    
-    var is_next_camera_already_instantiated := \
-            camera_or_class is ScaffolderCamera
-    var next_camera: ScaffolderCamera = \
-            camera_or_class if \
-            is_next_camera_already_instantiated else \
-            camera_or_class.new()
-    if !is_next_camera_already_instantiated:
-        add_child(next_camera)
-    
-    if matches_previous_camera_pan_and_zoom:
-        next_camera.match_camera(previous_camera)
-    
-    next_camera.is_active = true
-    previous_camera.is_active = false
-    
-    if is_instance_valid(previous_camera) and \
-            destroys_previous_camera:
-        previous_camera._destroy()
-        previous_camera.queue_free()
-
-
 func _update_editor_configuration() -> void:
     if !_is_ready:
         return
@@ -415,8 +365,7 @@ func _on_initial_input() -> void:
 
 
 func _on_resized() -> void:
-    if is_instance_valid(camera):
-        camera._on_resized()
+    pass
 
 
 func pause() -> void:
@@ -486,13 +435,6 @@ func _get_is_rate_app_screen_next() -> bool:
     return false
 
 
-func _set_default_camera() -> void:
-    var camera: ScaffolderCamera = Sc.camera.default_camera_class.new()
-    add_child(camera)
-    camera.is_active = true
-    self._default_camera = camera
-
-
 func _update_session_in_editor() -> void:
     if !Engine.editor_hint:
         return
@@ -538,30 +480,3 @@ func _get_active_player_character() -> ScaffolderCharacter:
 
 func _on_active_player_character_changed() -> void:
     pass
-
-
-func _establish_boundaries() -> void:
-    level_bounds = _get_combined_tilemaps_region()
-    camera_bounds = level_bounds.grow_individual(
-            Sc.levels.default_camera_bounds_level_margin.left,
-            Sc.levels.default_camera_bounds_level_margin.top,
-            Sc.levels.default_camera_bounds_level_margin.right,
-            Sc.levels.default_camera_bounds_level_margin.bottom)
-    character_bounds = level_bounds.grow_individual(
-            Sc.levels.default_character_bounds_level_margin.left,
-            Sc.levels.default_character_bounds_level_margin.top,
-            Sc.levels.default_character_bounds_level_margin.right,
-            Sc.levels.default_character_bounds_level_margin.bottom)
-
-
-func _get_combined_tilemaps_region() -> Rect2:
-    var tile_maps: Array = Sc.utils.get_children_by_type(self, TileMap, true)
-    assert(!tile_maps.empty())
-    var tile_map: TileMap = tile_maps[0]
-    var tile_map_region: Rect2 = \
-            Sc.geometry.get_tilemap_bounds_in_world_coordinates(tile_map)
-    for i in range(1, tile_maps.size()):
-        tile_map = tile_maps[i]
-        tile_map_region = tile_map_region.merge(
-                Sc.geometry.get_tilemap_bounds_in_world_coordinates(tile_map))
-    return tile_map_region

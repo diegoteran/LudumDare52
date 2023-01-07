@@ -81,6 +81,6 @@ func _fix_viewport_dimensions_hack() -> void:
         Sc.time.set_timeout(self, "set_visible", 0.4, [true])
 
 
-func add_level(level: ScaffolderLevel) -> void:
+func add_level(level) -> void:
     _is_first_activation_with_level = true
     $ViewportContainer/Viewport.add_child(level)

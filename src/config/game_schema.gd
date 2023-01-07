@@ -358,19 +358,17 @@ var _gui_manifest := {
 }
 
 var _character_scenes := [
-    preload("res://src/characters/test_character/test_character.tscn"),
-    preload("res://src/characters/test_character2/test_character2.tscn"),
 ]
 
 var _character_categories := [
 ]
 
 var _character_manifest := {
-    default_player_character_name = "test_character",
+    default_player_character_name = "",
     character_scenes = _character_scenes,
     character_categories = _character_categories,
-    omits_npcs = false,
-    can_include_player_characters = true,
+    omits_npcs = true,
+    can_include_player_characters = false,
 }
 
 var _level_manifest := {

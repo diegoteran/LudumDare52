@@ -59,33 +59,16 @@ func _load_level() -> void:
     $VBoxContainer/LoadingProgress/Label1.text = ""
     $VBoxContainer/LoadingProgress/Label2.text = ""
     
-    var level: SurfacerLevel = Sc.utils.add_scene(
+    var level = Sc.utils.add_scene(
             null,
             Sc.levels.get_level_config(level_id).scene_path,
             false,
             true)
     Sc.level = level
-    if Su.debug_params.has("limit_parsing"):
-        level.script = DebugLevel
     Sc.nav.screens["game"].add_level(level)
-    Sc.level.graph_parser.connect(
-            "calculation_started",
-            self,
-            "_on_calculation_started")
-    Sc.level.graph_parser.connect(
-            "load_started",
-            self,
-            "_on_load_started")
-    Sc.level.graph_parser.connect(
-            "calculation_progressed",
-            self,
-            "_on_graph_parse_progress")
-    Sc.level.graph_parser.connect(
-            "parse_finished",
-            self,
-            "_on_graph_parse_finished")
     graph_load_start_time = Sc.time.get_clock_time()
-    level._load()
+    
+    Sc.nav.call_deferred("open", "game", ScreenTransition.FANCY)
 
 
 func _on_calculation_started() -> void:
@@ -182,10 +165,10 @@ func _on_graph_parse_finished() -> void:
             Sc.time.get_clock_time() - graph_load_start_time)
 
 
-func _input(event: InputEvent) -> void:
-    if is_instance_valid(Sc.level) and \
-            Sc.level.graph_parser.is_parse_finished and \
-            (event is InputEventKey or \
-            event is InputEventMouseButton or \
-            event is InputEventScreenTouch):
-        Sc.nav.call_deferred("open", "game", ScreenTransition.FANCY)
+#func _input(event: InputEvent) -> void:
+#    if is_instance_valid(Sc.level) and \
+#            Sc.level.graph_parser.is_parse_finished and \
+#            (event is InputEventKey or \
+#            event is InputEventMouseButton or \
+#            event is InputEventScreenTouch):
+#        Sc.nav.call_deferred("open", "game", ScreenTransition.FANCY)
