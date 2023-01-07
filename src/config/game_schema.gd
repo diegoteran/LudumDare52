@@ -30,8 +30,8 @@ var _metadata := {
     are_button_controls_enabled_by_default = false,
     base_path = "",
     
-    app_name = "Ludum Dare 51",
-    app_id = "dev.levi.ludum_dare_51",
+    app_name = "Ludum Dare 52",
+    app_id = "com.GameDev.ludum_dare_52",
     app_version = "0.0.1",
     score_version = "0.0.1",
     data_agreement_version = "0.0.1",
@@ -47,9 +47,9 @@ var _metadata := {
     error_logs_url = "",
     app_id_query_param = "",
     
-    developer_name = "Levi Lindsey",
-    developer_url = "https://levi.dev",
-    github_url = "https://github.com/levilindsey/ludum-dare-51",
+    developer_name = "",
+    developer_url = "",
+    github_url = "https://github.com/diegoteran/LudumDare52",
     
     godot_splash_screen_duration = 0.8,
     developer_splash_screen_duration = 1.0,
