@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Organ Harvest"
-run/main_scene="res://world.tscn"
+run/main_scene="res://world/world.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,6 +24,8 @@ LevelManager="*res://globals/levelManager.gd"
 
 window/size/width=640
 window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

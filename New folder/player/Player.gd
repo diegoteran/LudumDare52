@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-export var ACCELERATION = 400
-export var MAX_SPEED = 75
+export var ACCELERATION = 600
+export var MAX_SPEED = 150
 export var ROLL_SPEED = 130
-export var FRICTION = 1000
+export var FRICTION = 4000
 export var ATTACK_SPEED = 15
 
 enum {
@@ -22,10 +22,14 @@ var velocity = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globals.set_player(self)
+	var remoteTransform = RemoteTransform2D.new()
+	print(get_parent().get_node("Camera2D").get_path())
+	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
+	add_child(remoteTransform)
 
 func _physics_process(delta):
 	if Globals.paused:
-		return;
+		return
 	debug.text = str(state)
 	
 	match(state):
@@ -42,9 +46,9 @@ func _process(delta):
 	if Input.is_action_pressed("attack"):
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		if Input.is_action_just_pressed("attack"):
-			$Weapon.shoot(direction);
+			$Weapon.shoot(direction)
 		else:
-			$Weapon.auto_shoot(direction);
+			$Weapon.auto_shoot(direction)
 			
 	if Input.is_action_pressed("debug"):
 		Globals.open_upgrade_menu_with_upgrades(0,1)
