@@ -1,0 +1,486 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/accordion_panel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_texture_rect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/spacer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_label_link.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_texture_link.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/images/gui/nine_patch/dropdown_normal.png" type="Texture" id=8]
+[ext_resource path="res://addons/scaffolder/src/gui/screens/about_screen.gd" type="Script" id=9]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_label.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/scaffolder/src/gui/style_box_texture_scalable.gd" type="Script" id=11]
+[ext_resource path="res://assets/images/gui/nine_patch/dropdown_hover.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/gui/nine_patch/focus_border.png" type="Texture" id=13]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/accordion_body.tscn" type="PackedScene" id=14]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/accordion_header.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/images/gui/nine_patch/dropdown_pressed.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxTexture" id=21]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+script = ExtResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=23]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+script = ExtResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+script = ExtResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+script = ExtResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=22]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+script = ExtResource( 11 )
+
+[node name="AboutScreen" type="VBoxContainer"]
+rect_min_size = Vector2( 1024, 768 )
+script = ExtResource( 9 )
+screen_name = "about"
+nav_bar_text = "About"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 814.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 224.0
+margin_right = 800.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 576, 69 )
+texture_key = "app_logo"
+
+[node name="Spacer2" parent="VBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 73.0
+margin_right = 512.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 0, 30 )
+size = Vector2( 0, 30 )
+
+[node name="DeveloperSection" type="VBoxContainer" parent="VBoxContainer"]
+margin_left = 280.0
+margin_top = 107.0
+margin_right = 744.0
+margin_bottom = 441.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer4" parent="VBoxContainer/DeveloperSection" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 232.0
+margin_right = 232.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size = Vector2( 0, 40 )
+
+[node name="DeveloperLogoLink" parent="VBoxContainer/DeveloperSection" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 464.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 464, 170 )
+texture_key = "developer_logo"
+url = "https://snoringcat.games"
+
+[node name="DeveloperNameLink" parent="VBoxContainer/DeveloperSection" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_top = 218.0
+margin_right = 303.0
+margin_bottom = 232.0
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Created by Snoring Cat"
+url = "https://snoringcat.games"
+
+[node name="DeveloperUrlLink" parent="VBoxContainer/DeveloperSection" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 152.0
+margin_top = 236.0
+margin_right = 311.0
+margin_bottom = 250.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "https://snoringcat.games"
+url = "https://snoringcat.games"
+
+[node name="Spacer5" parent="VBoxContainer/DeveloperSection" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 232.0
+margin_top = 254.0
+margin_right = 232.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 0, 80 )
+size = Vector2( 0, 80 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_left = 331.0
+margin_top = 445.0
+margin_right = 692.0
+margin_bottom = 598.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GodotSection" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 140.0
+margin_bottom = 153.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotLogoLink" parent="VBoxContainer/HBoxContainer/GodotSection" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 139.7
+margin_bottom = 50.0
+rect_min_size = Vector2( 140.7, 51 )
+texture_key = "godot_logo"
+texture_scale = Vector2( 0.3, 0.3 )
+url = "https://godotengine.org"
+
+[node name="GodotTextLink" parent="VBoxContainer/HBoxContainer/GodotSection" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 55.0
+margin_right = 124.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Made with Godot"
+url = "https://godotengine.org"
+
+[node name="Spacer5" parent="VBoxContainer/HBoxContainer/GodotSection" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 73.0
+margin_right = 70.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 0, 80 )
+size = Vector2( 0, 80 )
+
+[node name="Spacer" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_top = 76.0
+margin_right = 224.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 80, 0 )
+size = Vector2( 80, 0 )
+
+[node name="GithubSection" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 228.0
+margin_right = 361.0
+margin_bottom = 153.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GithubLogoLink" parent="VBoxContainer/HBoxContainer/GithubSection" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 132.2
+margin_bottom = 50.0
+rect_min_size = Vector2( 133.2, 51 )
+focus_mode = 2
+texture_key = "github_logo"
+texture_scale = Vector2( 0.3, 0.3 )
+url = "https://github.com/SnoringCatGames/meteor_power"
+
+[node name="GithubTextLink" parent="VBoxContainer/HBoxContainer/GithubSection" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 55.0
+margin_right = 107.0
+margin_bottom = 69.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Open source"
+url = "https://github.com/SnoringCatGames/meteor_power"
+
+[node name="Spacer5" parent="VBoxContainer/HBoxContainer/GithubSection" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 66.0
+margin_top = 73.0
+margin_right = 66.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 0, 80 )
+size = Vector2( 0, 80 )
+
+[node name="SpecialThanksContainer" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+margin_top = 106.0
+margin_right = 169.0
+margin_bottom = 158.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" parent="VBoxContainer/SpecialThanksContainer" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 37.0
+margin_right = 260.0
+margin_bottom = 39.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Special thanks:"
+
+[node name="SpecialThanks" parent="VBoxContainer/SpecialThanksContainer" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_top = 26.0
+margin_right = 84.0
+margin_bottom = 65.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+
+[node name="Spacer6" parent="VBoxContainer/SpecialThanksContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_top = 52.0
+margin_right = 84.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 40 )
+size = Vector2( 0, 40 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 602.0
+margin_right = 1024.0
+margin_bottom = 710.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TermsAndConditionsLink" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 449.0
+margin_right = 575.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Terms & Conditions"
+url = "https://docs.google.com/document/d/1aegg8nErqIRX0rMwzv1pfe_y6ralXeLPpTXM4TMwQUg/preview"
+
+[node name="PrivacyPolicyLink" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 468.0
+margin_top = 26.0
+margin_right = 555.0
+margin_bottom = 40.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Privacy Policy"
+url = "https://docs.google.com/document/d/1WYzGSfv1Xywpk9rYWDr0yf78o1Th_5m-4009Q_XEKlk/preview"
+
+[node name="SupportLink" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 487.0
+margin_top = 52.0
+margin_right = 536.0
+margin_bottom = 66.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.388235, 0.415686, 0.580392, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.262745, 0.380392, 1 )
+custom_colors/font_color_pressed = Color( 0.192157, 0.196078, 0.360784, 1 )
+text = "Support"
+url = "https://snoringcat.games/support?source=Windows&app=meteor-power"
+
+[node name="Spacer7" parent="VBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 78.0
+margin_right = 512.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 30 )
+size = Vector2( 0, 30 )
+
+[node name="AccordionPanel" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 282.0
+margin_top = 714.0
+margin_right = 742.0
+margin_bottom = 770.0
+rect_min_size = Vector2( 460, 0 )
+
+[node name="AccordionHeader" parent="VBoxContainer/AccordionPanel" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 460.0
+margin_bottom = 56.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/focus = SubResource( 20 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 22 )
+text = "More details"
+header_text = "More details"
+is_text_centered = true
+
+[node name="AccordionBody" parent="VBoxContainer/AccordionPanel" instance=ExtResource( 14 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 56.0
+margin_right = 460.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 460, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/AccordionPanel/AccordionBody"]
+visible = false
+margin_top = -164.0
+margin_right = 460.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false,
+"sc_separation": 4
+}
+
+[node name="Spacer8" parent="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_right = 230.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+size = Vector2( 0, 10 )
+
+[node name="DataDeletionButton" parent="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer" instance=ExtResource( 1 )]
+margin_left = 50.0
+margin_top = 14.0
+margin_right = 410.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 360, 56 )
+label = "Delete data"
+size_override = Vector2( 360, 0 )
+
+[node name="DataDeletionButtonPadding" parent="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 74.0
+margin_right = 230.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 30 )
+size = Vector2( 0, 30 )
+
+[node name="ThirdPartyLicensesButton" parent="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer" instance=ExtResource( 1 )]
+margin_left = 50.0
+margin_top = 108.0
+margin_right = 410.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 360, 56 )
+label = "Third-party licenses"
+size_override = Vector2( 360, 0 )
+
+[node name="PaddingBottom" parent="VBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 774.0
+margin_right = 512.0
+margin_bottom = 814.0
+rect_min_size = Vector2( 0, 40 )
+size = Vector2( 0, 40 )
+
+[connection signal="pressed" from="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer/DataDeletionButton" to="." method="_on_DataDeletionButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/AccordionPanel/AccordionBody/VBoxContainer/ThirdPartyLicensesButton" to="." method="_on_ThirdPartyLicensesButton_pressed"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/spacer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/scaffolder/src/gui/hud/hud_custom_value_box.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/gui/nine_patch/hud_panel.png" type="Texture" id=3]
+[ext_resource path="res://addons/scaffolder/src/gui/style_box_texture_scalable.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 7, 7 )
+margin_left = 3.5
+margin_right = 3.5
+margin_top = 3.5
+margin_bottom = 3.5
+script = ExtResource( 5 )
+
+[node name="HudCustomValueBox" type="PanelContainer"]
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 256, 48 )
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+style = 4
+color_override = null
+is_unique = false
+content_margin_left_override = -1
+content_margin_top_override = -1
+content_margin_right_override = -1
+content_margin_bottom_override = -1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 3.5
+margin_top = 3.5
+margin_right = 259.5
+margin_bottom = 51.5
+rect_min_size = Vector2( 256, 48 )
+mouse_filter = 2
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 8.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 8, 0 )
+size = Vector2( 8, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 248.0
+margin_bottom = 24.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_constants/separation = 0
+
+[node name="Spacer2" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 8, 0 )
+size = Vector2( 8, 0 )

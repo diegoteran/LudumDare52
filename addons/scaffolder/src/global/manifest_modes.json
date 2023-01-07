@@ -1,0 +1,6 @@
+{
+  "release": "playtest",
+  "threading": "disabled",
+  "annotations": "default",
+  "ui_smoothness": "pixelated"
+}

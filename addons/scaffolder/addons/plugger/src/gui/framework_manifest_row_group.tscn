@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/framework_manifest_row_group.gd" type="Script" id=1]
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/accordion/plugin_accordion_header.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/framework_manifest_array_buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/reset_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/accordion/plugin_accordion_body.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/scaffolder/addons/plugger/src/gui/accordion/plugin_accordion_header_caret.tscn" type="PackedScene" id=6]
+
+[node name="FrameworkManifestRowGroup" type="VBoxContainer"]
+margin_right = 460.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 460, 0 )
+rect_clip_content = true
+size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 1 )
+is_open = true
+
+[node name="AccordionHeader" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 460.0
+margin_bottom = 20.0
+rect_clip_content = true
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="AccordionHeader"]
+margin_right = 460.0
+margin_bottom = 40.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AccordionHeader/MarginContainer"]
+margin_right = 460.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 460, 34 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="PluginAccordionHeaderCaret" parent="AccordionHeader/MarginContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 4.0
+margin_right = 32.0
+margin_bottom = 36.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="AccordionHeader/MarginContainer/HBoxContainer"]
+margin_left = 32.0
+margin_top = 13.0
+margin_right = 326.0
+margin_bottom = 27.0
+mouse_filter = 1
+size_flags_horizontal = 3
+valign = 1
+
+[node name="ResetButton" parent="AccordionHeader/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+visible = false
+margin_left = 326.0
+margin_top = 13.0
+margin_right = 326.0
+margin_bottom = 27.0
+
+[node name="Buttons" parent="AccordionHeader/MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 326.0
+margin_top = 3.0
+margin_right = 460.0
+margin_bottom = 37.0
+size_flags_vertical = 4
+
+[node name="AccordionBody" parent="." instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 20.0
+margin_right = 460.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+is_open = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AccordionBody"]
+margin_right = 460.0
+size_flags_horizontal = 3
+custom_constants/separation = 4
+__meta__ = {
+"sc_separation": 4
+}
+
+[node name="Indent" type="Control" parent="AccordionBody/HBoxContainer"]
+mouse_filter = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Body" type="VBoxContainer" parent="AccordionBody/HBoxContainer"]
+margin_left = 4.0
+margin_right = 460.0
+rect_clip_content = true
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"sc_separation": 0
+}
+
+[connection signal="pressed" from="AccordionHeader/MarginContainer/HBoxContainer/ResetButton" to="." method="_on_reset_changes_pressed"]

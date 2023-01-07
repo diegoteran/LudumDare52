@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/scaffolder/src/gui/level_select/level_select_item_unlocked_header.gd" type="Script" id=1]
+[ext_resource path="res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres" type="DynamicFont" id=2]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_texture_rect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/spacer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/scaffolder_label.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="LevelSelectItemUnlockedHeader" type="Button"]
+margin_right = 320.0
+margin_bottom = 56.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer3" parent="HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 20.0
+margin_bottom = 20.0
+
+[node name="LevelNumber" parent="HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 46.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 30, 0 )
+custom_fonts/font = ExtResource( 2 )
+align = 2
+size_override = Vector2( 30, 0 )
+
+[node name="LevelName" parent="HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 62.0
+margin_right = 62.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+align = 0
+
+[node name="Caret" parent="HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 78.0
+margin_top = 8.0
+margin_right = 93.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 15, 24 )
+mouse_filter = 2
+texture_key = "left_caret_normal"
+texture_scale = Vector2( 3, 3 )
+
+[node name="Spacer4" parent="HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_top = 20.0
+margin_right = 109.0
+margin_bottom = 20.0
