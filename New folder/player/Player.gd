@@ -24,7 +24,8 @@ func _ready():
 	Globals.set_player(self)
 
 func _physics_process(delta):
-	
+	if Globals.paused:
+		return;
 	debug.text = str(state)
 	
 	match(state):
@@ -36,12 +37,17 @@ func _physics_process(delta):
 	move()
 	
 func _process(delta):
+	if Globals.paused:
+		return;
 	if Input.is_action_pressed("attack"):
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		if Input.is_action_just_pressed("attack"):
 			$Weapon.shoot(direction);
 		else:
 			$Weapon.auto_shoot(direction);
+			
+	if Input.is_action_pressed("debug"):
+		Globals.open_upgrade_menu_with_upgrades(0,1)
 
 
 func move():

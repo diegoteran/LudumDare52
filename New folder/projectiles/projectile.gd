@@ -17,11 +17,15 @@ func _ready():
 	return;
 
 func _process(delta):
+	if Globals.paused:
+		return;
 	timeAlive += delta;
 	if (timeAlive > ALIVE_TIME):
 		queue_free()
 
 func _physics_process(delta):
+	if Globals.paused:
+		return;
 	velocity = move_and_slide(velocity)
 	
 func shoot(direction):

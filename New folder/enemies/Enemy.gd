@@ -41,6 +41,8 @@ func _ready():
 	$HealthBar.max_value = MAX_HP;
 
 func _physics_process(delta):
+	if Globals.paused:
+		return;
 	debug.text = str(state)
 	
 	if state == DEAD:
