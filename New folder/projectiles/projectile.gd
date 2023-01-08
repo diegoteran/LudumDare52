@@ -36,6 +36,9 @@ func shoot(direction):
 		hitbox.damage += CRIT_DMG
 	hitbox.knockback = KNOCKBACK
 	hitbox.knockbackDirection = direction
+	
+	# TODO: Delete
+	SoundFx.play("menu", global_position)
 
 func hit_something():
 	queue_free()

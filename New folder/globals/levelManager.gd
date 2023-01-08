@@ -10,6 +10,9 @@ func startLevel():
 	var numEnemies = rand_range(5,20)
 	spawnEnemies(numEnemies)
 	
+	# TODO: FIX
+	SoundFx.play_music("what_must_be_done")
+	
 func spawnEnemies(numEnemies):
 	# Determine valid positions
 	# Get random assortment of enemies
