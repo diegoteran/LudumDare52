@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/scalpel.wav-d7d80fb3ae7fb69aabc25b6276c91f4a.sample"
+path="res://.import/select.wav-a4ca7abcf3bc5b38711faceaf35b85c1.sample"
 
 [deps]
 
-source_file="res://assets/sfx/scalpel.wav"
-dest_files=[ "res://.import/scalpel.wav-d7d80fb3ae7fb69aabc25b6276c91f4a.sample" ]
+source_file="res://sound/sounds/select.wav"
+dest_files=[ "res://.import/select.wav-a4ca7abcf3bc5b38711faceaf35b85c1.sample" ]
 
 [params]
 

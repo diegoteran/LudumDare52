@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/hurt.wav-f9e15987cf0d0247f8a182945127f72d.sample"
+path="res://.import/dino_mace.wav-384f15520f8bd67261d6725ecaa52e12.sample"
 
 [deps]
 
-source_file="res://assets/sfx/hurt.wav"
-dest_files=[ "res://.import/hurt.wav-f9e15987cf0d0247f8a182945127f72d.sample" ]
+source_file="res://sound/sounds/dino_mace.wav"
+dest_files=[ "res://.import/dino_mace.wav-384f15520f8bd67261d6725ecaa52e12.sample" ]
 
 [params]
 

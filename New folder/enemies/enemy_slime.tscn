@@ -145,6 +145,7 @@ tracks/2/keys = {
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
 ENEMY_PROJECTILE = ExtResource( 4 )
+DISTANCE_FROM_PLAYER = 0
 DROP_CHANCE = 0.7
 drop = ExtResource( 3 )
 SPREAD_DIRECTIONS = 6
@@ -152,8 +153,9 @@ SPREAD_BUFFER_DIST = 30
 
 [node name="Sprite" parent="." index="1"]
 self_modulate = Color( 1, 1, 1, 1 )
-position = Vector2( 0, -10 )
+position = Vector2( 0, 8 )
 texture = ExtResource( 2 )
+offset = Vector2( 0, -18 )
 hframes = 8
 
 [node name="CollisionShape2D" parent="." index="2"]

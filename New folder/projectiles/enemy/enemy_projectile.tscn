@@ -75,7 +75,6 @@ shader_param/inside = false
 shader_param/add_margins = true
 
 [node name="Projectile" instance=ExtResource( 1 )]
-DMG = 1.0
 CRIT_CHANCE = 0.0
 
 [node name="HitBox" parent="." index="1"]

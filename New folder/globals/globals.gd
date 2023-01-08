@@ -41,6 +41,11 @@ func level_root():
 func level_ui():
 	return level_root().get_node("world/UI")
 
+func level_camera():
+	if level_root().has_node("world"):
+		return level_root().get_node("world/Camera2D")
+	return null
+
 func clear_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:

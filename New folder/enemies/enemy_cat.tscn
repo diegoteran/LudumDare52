@@ -7,8 +7,7 @@
 [ext_resource path="res://assets/art/Art/enemies/Animations/Cat_walk.png" type="Texture" id=5]
 [ext_resource path="res://projectiles/enemy/enemy_projectile_cat.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Attack"
+[sub_resource type="Animation" id=5]
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -136,7 +135,7 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -193,8 +192,9 @@ ENEMY_PROJECTILE = ExtResource( 6 )
 
 [node name="Sprite" parent="." index="1"]
 self_modulate = Color( 1, 1, 1, 1 )
-position = Vector2( 0, -10 )
+position = Vector2( 0, 19 )
 texture = ExtResource( 2 )
+offset = Vector2( 0, -29 )
 hframes = 8
 
 [node name="CollisionShape2D" parent="." index="2"]
@@ -210,9 +210,9 @@ position = Vector2( 0, 7 )
 position = Vector2( 0, 9 )
 
 [node name="AnimationPlayer" parent="." index="7"]
-anims/Attack = SubResource( 1 )
+anims/Attack = SubResource( 5 )
 anims/Move = SubResource( 3 )
-anims/RESET = SubResource( 2 )
+anims/RESET = SubResource( 6 )
 
 [editable path="HitBox"]
 [editable path="SoftCollision"]

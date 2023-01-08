@@ -21,6 +21,7 @@ UpgradeDict="*res://globals/upgradeDict.gd"
 LevelManager="*res://globals/levelManager.gd"
 SoundFx="*res://sound/sound_fx.tscn"
 ResearchManager="*res://globals/ResearchManager.gd"
+Shake="*res://globals/shake.gd"
 
 [display]
 

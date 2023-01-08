@@ -16,5 +16,7 @@ func shoot():
 		p.global_position = global_position + direction.normalized() * SPREAD_BUFFER_DIST
 		Globals.level_root().add_child(p)
 		p.shoot(direction)
+		
+		SoundFx.play("slime_jump", global_position, rand_range(0.9, 1.2))
 	
 	.end_attack()

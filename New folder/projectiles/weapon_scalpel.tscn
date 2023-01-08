@@ -9,6 +9,6 @@ projectileSpeed = 150
 projectileAliveTime = 0.1
 projectileCritDmg = 2
 projectileCritChance = 0.1
-projectileKnockback = 250
+projectileKnockback = 120
 fireRate = 0.5
 spray = 0

@@ -7,3 +7,4 @@ func shoot():
 	var shootDirection = (Globals.get_player().global_position - global_position).normalized()
 	p.global_position = global_position + (shootDirection * BUFFER_DIST)
 	p.shoot(shootDirection)
+	SoundFx.play("scorpion_slash", global_position, rand_range(0.8, 1.2))

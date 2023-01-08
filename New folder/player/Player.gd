@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var ACCELERATION = 600
+export var ACCELERATION = 1000
 export var MAX_SPEED = 170
 export var ROLL_SPEED = 130
 export var FRICTION = 4000
@@ -42,6 +42,7 @@ func set_health(value):
 func on_death():
 	print("player died")
 	Globals.change_to_run_end()
+	SoundFx.play("dead", global_position)
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -109,5 +110,6 @@ func regen_health():
 func _on_HurtBox_area_entered(area):
 	print("player hit by damage: " + str(area.damage))
 	self.health = health - area.damage
-	knockback += area.knockback * area.knockbackDirection
+	knockback += area.knockback * area.knockbackDirection * 0.1
 	area.get_parent().hit_something()
+	SoundFx.play("hurt", global_position, rand_range(0.8, 1.2))

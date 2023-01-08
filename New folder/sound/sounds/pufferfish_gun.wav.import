@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/dino_mace.wav-ad7c1192f672414b7275a913f098fea6.sample"
+path="res://.import/pufferfish_gun.wav-1c5040e39acf5a10c4f86652234d873a.sample"
 
 [deps]
 
-source_file="res://assets/sfx/dino_mace.wav"
-dest_files=[ "res://.import/dino_mace.wav-ad7c1192f672414b7275a913f098fea6.sample" ]
+source_file="res://sound/sounds/pufferfish_gun.wav"
+dest_files=[ "res://.import/pufferfish_gun.wav-1c5040e39acf5a10c4f86652234d873a.sample" ]
 
 [params]
 

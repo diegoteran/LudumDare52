@@ -1,6 +1,7 @@
 extends Node2D
 
 export var projectile = preload("res://projectiles/projectile.tscn")
+export var sound_string = "scalpel"
 
 # How fast the bullet will be
 export var projectileSpeed = 10
@@ -21,7 +22,7 @@ export var spray = 10
 # Whether or not the gun needs to be clicked for each bullet
 export var automatic = false
 # How much the gun pushes the user back while firing
-export var recoil = 20
+export var recoil = 5
 
 var cooldown = 0
 export var BUFFER_DIST = 50
@@ -54,5 +55,13 @@ func shoot(direction):
 	Globals.level_root().add_child(p)
 
 	p.shoot(direction)
+	play_weapon_sound()
+	screen_shake()
 	get_parent().knockback += direction * -1 * recoil
 	cooldown = fireRate
+
+func play_weapon_sound():
+	SoundFx.play(sound_string, global_position, rand_range(0.9, 1.1))
+
+func screen_shake():
+	Shake.shake(0.5, 0.3)

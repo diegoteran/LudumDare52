@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/mosquito_slash.wav-65e165c5e8e8ca735bdb7f9888d14346.sample"
+path="res://.import/mosquito_slash.wav-b095c4f22c2f8475a6e7960e7affbbe0.sample"
 
 [deps]
 
-source_file="res://assets/sfx/mosquito_slash.wav"
-dest_files=[ "res://.import/mosquito_slash.wav-65e165c5e8e8ca735bdb7f9888d14346.sample" ]
+source_file="res://sound/sounds/mosquito_slash.wav"
+dest_files=[ "res://.import/mosquito_slash.wav-b095c4f22c2f8475a6e7960e7affbbe0.sample" ]
 
 [params]
 

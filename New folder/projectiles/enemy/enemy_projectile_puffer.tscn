@@ -1,19 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://projectiles/projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://projectiles/enemy/enemy_projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/Art/projectiles/Bullet_pufferfish.png" type="Texture" id=2]
 
 [node name="Projectile" instance=ExtResource( 1 )]
-ALIVE_TIME = 5
-SPEED = 400
-CRIT_DMG = 1.0
-KNOCKBACK = 400.0
-
-[node name="HitBox" parent="." index="1"]
-collision_mask = 4
+ALIVE_TIME = 10
+SPEED = 200
 
 [node name="Sprite" parent="." index="2"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [editable path="HitBox"]

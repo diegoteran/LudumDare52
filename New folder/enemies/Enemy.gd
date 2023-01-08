@@ -4,8 +4,8 @@ export var ENEMY_PROJECTILE : PackedScene
 export var __ = "Enemy Stats"
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
-export var FRICTION = 200
-export var KNOCKBACK_FRICTION = 150
+export var FRICTION = 800
+export var KNOCKBACK_FRICTION = 500
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
 export var ___ = "Attack cooldown stuff"
@@ -65,6 +65,8 @@ func _physics_process(delta):
 	if state == DEAD:
 		return
 	
+	sprite.flip_h = global_position.direction_to(player.global_position).x > 0
+	
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	
@@ -93,7 +95,6 @@ func _physics_process(delta):
 func accelerate_towards_point(point, delta):
 	var direction = global_position.direction_to(point)
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
-	sprite.flip_h = velocity.x > 0
 
 func hit_something():
 	print("HIT THE HUMAN")
@@ -112,6 +113,7 @@ func _on_HurtBox_area_entered(area):
 	set_hp(newHp)
 	knockback += area.knockback * area.knockbackDirection
 	area.get_parent().hit_something()
+	SoundFx.play("hit", global_position, rand_range(0.8, 1.2))
 	pass # Replace with function body.
 
 func distance_from_player(player_position):

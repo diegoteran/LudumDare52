@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/scorpion_slash.wav-dbcf497284eef4d2611bf1bbd1bce817.sample"
+path="res://.import/scorpion_slash.wav-02e34975365109d03fe191f7dfb2ca14.sample"
 
 [deps]
 
-source_file="res://assets/sfx/scorpion_slash.wav"
-dest_files=[ "res://.import/scorpion_slash.wav-dbcf497284eef4d2611bf1bbd1bce817.sample" ]
+source_file="res://sound/sounds/scorpion_slash.wav"
+dest_files=[ "res://.import/scorpion_slash.wav-02e34975365109d03fe191f7dfb2ca14.sample" ]
 
 [params]
 

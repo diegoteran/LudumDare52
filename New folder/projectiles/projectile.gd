@@ -54,7 +54,7 @@ func shoot(direction):
 	hitbox.knockbackDirection = direction
 	
 	# TODO: Delete
-	SoundFx.play("menu", global_position)
+#	SoundFx.play("menu", global_position)
 
 func spread_at_contact():
 	for i in range(SPREAD_DIRECTIONS):

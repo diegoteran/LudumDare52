@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/slime_jump.wav-0057494608e86ca5a897e78a418f5b3b.sample"
+path="res://.import/dead.wav-63f9ffc0b39d84ab3d3db72a431fac51.sample"
 
 [deps]
 
-source_file="res://assets/sfx/slime_jump.wav"
-dest_files=[ "res://.import/slime_jump.wav-0057494608e86ca5a897e78a418f5b3b.sample" ]
+source_file="res://sound/sounds/dead.wav"
+dest_files=[ "res://.import/dead.wav-63f9ffc0b39d84ab3d3db72a431fac51.sample" ]
 
 [params]
 

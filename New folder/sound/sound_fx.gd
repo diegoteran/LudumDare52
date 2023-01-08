@@ -5,7 +5,17 @@ var music_path = "res://sound/music/"
 
 # Keep sorted please
 var sounds = {
+	"dead" : load(sounds_path + "dead.wav"),
+	"dino_mace" : load(sounds_path + "dino_mace.wav"),
+	"hit" : load(sounds_path + "hit.wav"),
+	"hurt" : load(sounds_path + "hurt.wav"),
 	"menu" : load(sounds_path + "menu.wav"),
+	"mosquito_slash" : load(sounds_path + "mosquito_slash.wav"),
+	"pufferfish_gun" : load(sounds_path + "pufferfish_gun.wav"),
+	"scalpel" : load(sounds_path + "scalpel.wav"),
+	"scorpion_slash" : load(sounds_path + "scorpion_slash.wav"),
+	"select" : load(sounds_path + "select.wav"),
+	"slime_jump" : load(sounds_path + "slime_jump.wav"),
 }
 
 var music ={
