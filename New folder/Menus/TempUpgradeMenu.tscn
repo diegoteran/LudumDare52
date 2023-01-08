@@ -14,7 +14,7 @@ margin_left = 24.0
 margin_top = 16.0
 margin_right = 614.0
 margin_bottom = 337.0
-color = Color( 0.533333, 0.533333, 0.533333, 0.266667 )
+color = Color( 0.219608, 0.219608, 0.219608, 0.870588 )
 
 [node name="MenuTitle" type="RichTextLabel" parent="."]
 margin_left = 170.0
