@@ -9,6 +9,8 @@ export var MAX_HEALTH = 5
 
 var health = 5 setget set_health
 
+var fixedHealth = false
+
 enum {
 	MOVE,
 	ROLL,
@@ -44,6 +46,7 @@ func _ready():
 	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
 	add_child(remoteTransform)
 
+
 func _physics_process(delta):
 	if Globals.paused:
 		return
@@ -60,6 +63,11 @@ func _physics_process(delta):
 func _process(delta):
 	if Globals.paused:
 		return;
+	# Lol
+	if not fixedHealth:
+		call_deferred("set_health", MAX_HEALTH)
+		fixedHealth = true
+	
 	if Input.is_action_pressed("attack"):
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		if Input.is_action_just_pressed("attack"):

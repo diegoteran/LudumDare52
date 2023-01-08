@@ -14,7 +14,7 @@ var scorpion_shotgun_level = 0
 var bone_mace_level = 0
 
 var health_upgrades = 0
-var health_step = 5
+var health_step = 2
 var HEALTH_COST = [10, 50, 100]
 
 var speed_upgrades = 0
