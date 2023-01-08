@@ -7,6 +7,13 @@ var player
 
 var paused = false;
 var luck = 0
+var weapon = "scalpel"
+
+var weaponDict = {
+	"scalpel" : preload("res://projectiles/weapon_scalpel.tscn"),
+	"slimegun" : preload("res://projectiles/weapon_slime.tscn")
+	
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,7 +37,12 @@ func _process(delta):
 func set_player(player_ref):
 	player = player_ref
 	LevelManager.startNewRun()
-	
+	apply_weapon()
+
+func apply_weapon():
+	player.WEAPON = weaponDict[weapon]
+	player.add_weapon()
+		
 
 func get_player():
 	return player

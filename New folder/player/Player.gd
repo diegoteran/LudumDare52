@@ -47,13 +47,14 @@ func on_death():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_child(WEAPON.instance())
 	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
 	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
 	add_child(remoteTransform)
 
+func add_weapon():
+	add_child(WEAPON.instance())
 
 func _physics_process(delta):
 	if Globals.paused:

@@ -1,17 +1,25 @@
 extends Node
 
-var slime_skin = 0
-var puffer_lungs = 0
-var blood_bags = 0
-var scorpion_tails = 0
-var bones = 0
-var boss_hearts = 0
+var slime_skin = 10
+var puffer_lungs = 10
+var blood_bags = 10
+var scorpion_tails = 10
 
 var slime_gun_level = 0
+var SLIME_COST = [5,10,20]
+var SLIME_GUN_DMG_STEP = 5
+
 var blow_gun_level = 0
+var LUNG_COST = [5,10,20]
+var BLOW_GUN_DMG_STEP = 5
+
 var mosquito_rapier_level = 0
-var scorpion_shotgun_level = 0
-var bone_mace_level = 0
+var BLOOD_COST = [5,10,20]
+var RAPIER_DMG_STEP = 5
+
+var scalpel_level = 1
+var TAIL_COST = [5,10,20]
+var SCALPEL_DMG_STEP = 5
 
 var health_upgrades = 0
 var health_step = 2
@@ -29,9 +37,6 @@ var dash_upgrades = 0
 var dash_step = 5
 var DASH_COST = [1, 3, 5, 10, 50, 100]
 
-var armor_upgrades = 0
-var armor_step = 5
-var ARMOR_COST = [10, 50, 100]
 
 func apply_upgrades():
 	var player = Globals.get_player()

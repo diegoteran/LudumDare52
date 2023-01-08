@@ -41,49 +41,17 @@ __meta__ = {
 }
 
 [node name="Inventory" type="Control" parent="."]
-margin_left = 1.0
-margin_top = 266.0
-margin_right = 356.0
-margin_bottom = 420.0
-
-[node name="BoneCurrency" type="Control" parent="Inventory"]
-margin_left = 19.0
-margin_top = 45.0
-margin_right = 210.0
-margin_bottom = 89.0
-theme = ExtResource( 5 )
-
-[node name="count" type="RichTextLabel" parent="Inventory/BoneCurrency"]
-margin_left = 65.0
-margin_top = -5.0
-margin_right = 129.0
-margin_bottom = 47.0
-text = "0"
-scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="text" type="RichTextLabel" parent="Inventory/BoneCurrency"]
-margin_left = 1.0
-margin_top = -5.0
-margin_right = 204.0
-margin_bottom = 47.0
-text = "BONES:"
-scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
+margin_left = -10.0
+margin_top = 285.0
+margin_right = 345.0
+margin_bottom = 439.0
 
 [node name="SkinCurrency" type="Control" parent="Inventory"]
 margin_left = 19.0
-margin_top = 60.0
+margin_top = 43.0
 margin_right = 210.0
-margin_bottom = 104.0
+margin_bottom = 87.0
 theme = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="count" type="RichTextLabel" parent="Inventory/SkinCurrency"]
 margin_left = 65.0
@@ -109,13 +77,10 @@ __meta__ = {
 
 [node name="BloodCurrency" type="Control" parent="Inventory"]
 margin_left = 19.0
-margin_top = 76.0
+margin_top = 61.0
 margin_right = 210.0
-margin_bottom = 120.0
+margin_bottom = 105.0
 theme = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="count" type="RichTextLabel" parent="Inventory/BloodCurrency"]
 margin_left = 65.0
@@ -248,6 +213,7 @@ __meta__ = {
 }
 
 [node name="Stat Upgrades" type="Control" parent="."]
+visible = false
 margin_left = 12.0
 margin_top = 53.0
 margin_right = 252.0
@@ -457,76 +423,11 @@ margin_right = 347.0
 margin_bottom = 19.0
 text = "purchase"
 
-[node name="ArmorUpgrade" type="Control" parent="Stat Upgrades"]
-margin_left = 2.0
-margin_top = 109.0
-margin_right = 225.0
-margin_bottom = 145.0
-theme = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="statLabel" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_right = 64.0
-margin_bottom = 18.0
-text = "Armor"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="levelLabel" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 69.0
-margin_right = 92.0
-margin_bottom = 16.0
-text = "Lv"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="currentLevel" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 93.0
-margin_right = 137.0
-margin_bottom = 16.0
-text = "0"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="costLabel" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 111.0
-margin_right = 186.0
-margin_bottom = 16.0
-text = "Cost:"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="currencyLabel" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 193.0
-margin_right = 256.0
-margin_bottom = 16.0
-text = "Bones"
-
-[node name="cost" type="RichTextLabel" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 159.0
-margin_top = -1.0
-margin_right = 187.0
-margin_bottom = 15.0
-text = "0"
-
-[node name="Button" type="Button" parent="Stat Upgrades/ArmorUpgrade"]
-margin_left = 255.0
-margin_top = -2.0
-margin_right = 347.0
-margin_bottom = 19.0
-text = "purchase"
-
 [node name="DashUpgrade" type="Control" parent="Stat Upgrades"]
-margin_left = 3.0
-margin_top = 137.0
-margin_right = 226.0
-margin_bottom = 173.0
+margin_left = 1.0
+margin_top = 111.0
+margin_right = 224.0
+margin_bottom = 147.0
 theme = ExtResource( 5 )
 
 [node name="statLabel" type="RichTextLabel" parent="Stat Upgrades/DashUpgrade"]
@@ -584,17 +485,222 @@ margin_right = 347.0
 margin_bottom = 19.0
 text = "purchase"
 
+[node name="Weapon Upgrades" type="Control" parent="."]
+margin_left = 12.0
+margin_top = 53.0
+margin_right = 252.0
+margin_bottom = 212.0
+
+[node name="Weapon Title" type="RichTextLabel" parent="Weapon Upgrades"]
+margin_right = 331.0
+margin_bottom = 40.0
+theme = ExtResource( 4 )
+text = "Weapon Upgrades"
+
+[node name="ScalpelGun" type="Control" parent="Weapon Upgrades"]
+margin_left = 2.0
+margin_top = 33.0
+margin_right = 225.0
+margin_bottom = 69.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Weapon Name" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = -11.0
+margin_right = 85.0
+margin_bottom = 17.0
+text = "Scalpel"
+
+[node name="lockedLabel" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 77.0
+margin_right = 149.0
+margin_bottom = 17.0
+text = "locked"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="levelLabel" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+visible = false
+margin_left = 77.0
+margin_right = 100.0
+margin_bottom = 16.0
+text = "Lv"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="currentLevel" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+visible = false
+margin_left = 100.0
+margin_right = 144.0
+margin_bottom = 16.0
+text = "0"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="costLabel" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 149.0
+margin_right = 224.0
+margin_bottom = 17.0
+text = "Cost:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="currencyLabel" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 226.0
+margin_right = 289.0
+margin_bottom = 16.0
+text = "skin"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cost" type="RichTextLabel" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 197.0
+margin_right = 227.0
+margin_bottom = 16.0
+text = "0"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="buyButton" type="Button" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 287.0
+margin_top = -1.0
+margin_right = 379.0
+margin_bottom = 20.0
+text = "purchase"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="equip" type="Button" parent="Weapon Upgrades/ScalpelGun"]
+margin_left = 392.0
+margin_top = -1.0
+margin_right = 484.0
+margin_bottom = 20.0
+text = "equip"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SlimeGun" type="Control" parent="Weapon Upgrades"]
+margin_left = 3.0
+margin_top = 61.0
+margin_right = 226.0
+margin_bottom = 97.0
+theme = ExtResource( 5 )
+
+[node name="Weapon Name" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+margin_left = -13.0
+margin_right = 75.0
+margin_bottom = 17.0
+text = "Slime Gun"
+
+[node name="lockedLabel" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 77.0
+margin_right = 149.0
+margin_bottom = 17.0
+text = "locked"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="levelLabel" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+visible = false
+margin_left = 77.0
+margin_right = 100.0
+margin_bottom = 16.0
+text = "Lv"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="currentLevel" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+visible = false
+margin_left = 100.0
+margin_right = 144.0
+margin_bottom = 16.0
+text = "0"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="costLabel" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 149.0
+margin_right = 224.0
+margin_bottom = 17.0
+text = "Cost:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="currencyLabel" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 226.0
+margin_right = 289.0
+margin_bottom = 16.0
+text = "skin"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cost" type="RichTextLabel" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 197.0
+margin_right = 227.0
+margin_bottom = 16.0
+text = "0"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="buyButton" type="Button" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 287.0
+margin_top = -1.0
+margin_right = 379.0
+margin_bottom = 20.0
+text = "purchase"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="equip" type="Button" parent="Weapon Upgrades/SlimeGun"]
+margin_left = 392.0
+margin_top = -1.0
+margin_right = 484.0
+margin_bottom = 20.0
+text = "equip"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="EnterDungeonButton" type="Button" parent="."]
-margin_left = 381.0
-margin_top = 310.0
-margin_right = 619.0
-margin_bottom = 350.0
+margin_left = 396.0
+margin_top = 320.0
+margin_right = 634.0
+margin_bottom = 360.0
 theme = SubResource( 2 )
 text = "Enter Dungeon"
+
+[node name="SwapButton" type="Button" parent="."]
+margin_left = 409.0
+margin_top = 10.0
+margin_right = 597.0
+margin_bottom = 43.0
+theme = ExtResource( 5 )
+text = "Swap to stat screen"
 
 [connection signal="pressed" from="Stat Upgrades/HealthUpgrade/Button" to="." method="_on_health_button_pressed"]
 [connection signal="pressed" from="Stat Upgrades/SpeedUpgrade/Button" to="." method="_on_speed_button_pressed"]
 [connection signal="pressed" from="Stat Upgrades/HealsUpgrade/Button" to="." method="_on_heals_button_pressed"]
-[connection signal="pressed" from="Stat Upgrades/ArmorUpgrade/Button" to="." method="_on_armor_button_pressed"]
 [connection signal="pressed" from="Stat Upgrades/DashUpgrade/Button" to="." method="_on_dash_button_pressed"]
+[connection signal="pressed" from="Weapon Upgrades/ScalpelGun/buyButton" to="." method="_on_scalpel_buyButton_pressed"]
+[connection signal="pressed" from="Weapon Upgrades/ScalpelGun/equip" to="." method="_on_scalpel_equip_pressed"]
+[connection signal="pressed" from="Weapon Upgrades/SlimeGun/buyButton" to="." method="_on_slimegun_buyButton_pressed"]
+[connection signal="pressed" from="Weapon Upgrades/SlimeGun/equip" to="." method="_on_slime_equip_pressed"]
 [connection signal="pressed" from="EnterDungeonButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="SwapButton" to="." method="_on_SwapButton_pressed"]
