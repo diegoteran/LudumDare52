@@ -7,7 +7,7 @@
 ALIVE_TIME = 5
 SPEED = 400
 CRIT_DMG = 1.0
-KNOCKBACK = 1000.0
+KNOCKBACK = 400.0
 
 [node name="HitBox" parent="." index="1"]
 collision_mask = 4

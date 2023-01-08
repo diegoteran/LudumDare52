@@ -7,7 +7,8 @@
 projectile = ExtResource( 2 )
 projectileSpeed = 150
 projectileAliveTime = 0.1
-projectileCritChance = 0.0
+projectileCritDmg = 2
+projectileCritChance = 0.1
 projectileKnockback = 250
 fireRate = 0.5
 spray = 0

@@ -1,5 +1,6 @@
 extends "res://pickups/pickup.gd"
 
 func collect():
-	ResearchManager.scorpion_tails += 1
+	# TODO Fix this when we have mosquitos or dashing
+	ResearchManager.blood_bags += 1
 	pass

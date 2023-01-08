@@ -6,6 +6,7 @@ export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
 export var MAX_HEALTH = 10
+export var HEALTH_REGEN = 0
 
 export var WEAPON: PackedScene
 
@@ -103,6 +104,8 @@ func move_state(delta):
 #		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
+func regen_health():
+	set_health(min(MAX_HEALTH, health + HEALTH_REGEN))
 
 func _on_HurtBox_area_entered(area):
 	print("player hit by damage: " + str(area.damage))

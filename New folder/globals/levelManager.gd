@@ -55,7 +55,7 @@ func startLevel():
 	room_cleared = false
 	pickup_count = 0
 	Globals.get_player().global_position = Vector2(Globals.WORLD_WIDTH/2, Globals.WORLD_HEIGHT/2) 
-	
+	Globals.get_player().regen_health()
 	spawnEnemies(enemy_count[level_num])
 	
 	# TODO: FIX

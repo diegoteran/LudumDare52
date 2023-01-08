@@ -49,9 +49,10 @@ func shoot(direction):
 	p.CRIT_DMG = projectileCritDmg
 	p.CRIT_CHANCE = projectileCritChance
 	p.KNOCKBACK = projectileKnockback
+	direction = direction.rotated(deg2rad(rand_range(-spray, spray)))
 	p.global_position = get_parent().global_position + direction.normalized()*BUFFER_DIST
 	Globals.level_root().add_child(p)
-	direction = direction.rotated(deg2rad(rand_range(-spray, spray)))
+
 	p.shoot(direction)
 	get_parent().knockback += direction * -1 * recoil
 	cooldown = fireRate

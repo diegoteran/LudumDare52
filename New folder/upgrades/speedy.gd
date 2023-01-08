@@ -1,12 +1,13 @@
 extends "res://upgrades/UpgradeBase.gd"
 
 func setValues():
-	upgradeName = "Lucky"
-	description  = "Higher chance for enemies to drop resources"
+	upgradeName = "Speedy"
+	description  = "1.5x Speed"
 	iconPath = "res://assets/art/programmerArt/greenHealthIGuess.png"
 	.setValues()
 
 func apply_upgrade():
-	Globals.luck += 0.1
+	var player = Globals.get_player()
+	player.MAX_SPEED *= 1.5
 	
 

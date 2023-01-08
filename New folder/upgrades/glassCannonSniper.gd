@@ -11,7 +11,7 @@ func apply_upgrade():
 	var weapon = player.get_node("Weapon")
 	
 	weapon.projectileDmg *= 3
-	weapon.projectileSpeed *= 3
+	weapon.projectileSpeed *= 5
 	player.MAX_HEALTH *= 0.25
 	player.set_health(min(player.MAX_HEALTH, player.health))
 	

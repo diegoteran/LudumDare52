@@ -15,19 +15,19 @@ var bone_mace_level = 0
 
 var health_upgrades = 0
 var health_step = 2
-var HEALTH_COST = [10, 50, 100]
+var HEALTH_COST = [1, 3, 5, 10, 50, 100]
 
 var speed_upgrades = 0
 var speed_step = 5
-var SPEED_COST = [10, 50, 100]
+var SPEED_COST = [1, 3, 5, 10, 50, 100]
 
 var health_regen_upgrades = 0
-var health_regen_step = 5
-var HEALTH_REGEN_COST = [10, 50, 100]
+var health_regen_step = 1
+var HEALTH_REGEN_COST = [1, 3, 5, 10, 50, 100]
 
 var dash_upgrades = 0
 var dash_step = 5
-var DASH_COST = [10, 50, 100]
+var DASH_COST = [1, 3, 5, 10, 50, 100]
 
 var armor_upgrades = 0
 var armor_step = 5
@@ -38,5 +38,6 @@ func apply_upgrades():
 	
 	player.MAX_HEALTH += health_upgrades*health_step
 	player.MAX_SPEED += speed_upgrades*speed_step
+	player.HEALTH_REGEN += health_regen_upgrades*health_regen_step
 	
 	# Add rest

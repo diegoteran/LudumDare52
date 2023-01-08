@@ -2,7 +2,7 @@ extends "res://upgrades/UpgradeBase.gd"
 
 func setValues():
 	upgradeName = "Random Weapon"
-	description  = "Lets get wacky"
+	description  = "This is probably bad, but maybe it'll be good?"
 	iconPath = "res://assets/art/programmerArt/greenHealthIGuess.png"
 	.setValues()
 
