@@ -1,4 +1,4 @@
-extends "res://UpgradesAndMenus/upgrades/UpgradeBase.gd"
+extends "res://upgrades/UpgradeBase.gd"
 
 func setValues():
 	upgradeName = "Random Weapon"

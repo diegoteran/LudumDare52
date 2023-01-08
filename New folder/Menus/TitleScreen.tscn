@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Menus/TitleScreen.gd" type="Script" id=2]
+[ext_resource path="res://TitleTheme.tres" type="Theme" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 649.0
+margin_bottom = 374.0
+color = Color( 0.368627, 0.364706, 0.631373, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 154.0
+margin_top = 106.0
+margin_right = 473.0
+margin_bottom = 252.0
+theme = ExtResource( 3 )
+text = "UNTITLED ORGAN GAME"
+
+[node name="Start" type="Button" parent="."]
+margin_left = 157.0
+margin_top = 281.0
+margin_right = 262.0
+margin_bottom = 315.0
+theme = ExtResource( 1 )
+text = "START"
+
+[node name="Close" type="Button" parent="."]
+margin_left = 277.0
+margin_top = 281.0
+margin_right = 307.0
+margin_bottom = 315.0
+theme = ExtResource( 1 )
+text = "X"
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]

@@ -4,14 +4,33 @@ const DELTA = 20
 
 var enemy = preload("res://enemies/Enemy.tscn")
 var enemiesAlive = 0
-var upgradeMenu = preload("res://UpgradesAndMenus/Menus/TempUpgradeMenu.tscn")
+var upgradeMenu = preload("res://Menus/TempUpgradeMenu.tscn")
+var level_num = 0
+var max_levels = 5
+
+var total_killed = 0
+var total_time = 0
+
+func _process(delta):
+	if Globals.paused:
+		return
+	total_time += delta
+
+func startNewRun():
+	ResearchManager.apply_upgrades()
+	total_killed = 0
+	total_time = 0
+	level_num = 0
+	startLevel()
 
 func startLevel():
-	var numEnemies = rand_range(5,20)
+	var numEnemies = rand_range(5,10)
 	spawnEnemies(numEnemies)
 	
 	# TODO: FIX
 	SoundFx.play_music("what_must_be_done")
+	level_num += 1
+
 	
 func spawnEnemies(numEnemies):
 	# Determine valid positions
@@ -27,17 +46,20 @@ func spawnEnemies(numEnemies):
 		enemiesAlive += 1
 		
 func enemyDied():
+	total_killed += 1
 	enemiesAlive -= 1
 	if enemiesAlive <= 0:
 		print("all enemies dead")
-		# TODO Check to see if we made it through the last room
-		open_upgrade_menu_with_upgrades(0,1)
+		if level_num > max_levels:
+			Globals.change_to_run_end()
+		else:
+			open_upgrade_menu_with_upgrades(0,1)
 
 func open_upgrade_menu_with_upgrades(upgrade1, upgrade2):
 	Globals.paused = true
 	var menu = upgradeMenu.instance()
 	Globals.level_ui().add_child(menu)
-	var basePath = "res://UpgradesAndMenus/Upgrades/"
+	var basePath = "res://Upgrades/"
 	var upgrade1Script = load(basePath + UpgradeDict.upgrades[upgrade1])
 	menu.upgrade1.set_script(upgrade1Script)
 	menu.upgrade1.setValues()

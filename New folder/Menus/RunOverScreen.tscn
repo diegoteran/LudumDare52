@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Menus/RunOverScreen.gd" type="Script" id=2]
+[ext_resource path="res://TitleTheme.tres" type="Theme" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 649.0
+margin_bottom = 374.0
+color = Color( 0.509804, 0.305882, 0.368627, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 13.0
+margin_top = 3.0
+margin_right = 348.0
+margin_bottom = 55.0
+theme = ExtResource( 3 )
+text = "RUN ENDED"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 17.0
+margin_top = 315.0
+margin_right = 182.0
+margin_bottom = 355.0
+theme = ExtResource( 1 )
+text = "To Research"
+
+[node name="KillStat" type="Control" parent="."]
+margin_left = 51.0
+margin_top = 97.0
+margin_right = 311.0
+margin_bottom = 137.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="KillStat"]
+margin_right = 335.0
+margin_bottom = 52.0
+theme = ExtResource( 1 )
+text = "KILLS:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stat" type="RichTextLabel" parent="KillStat"]
+margin_left = 161.0
+margin_top = -1.0
+margin_right = 201.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TimeStat" type="Control" parent="."]
+margin_left = 51.0
+margin_top = 119.0
+margin_right = 311.0
+margin_bottom = 159.0
+
+[node name="text" type="RichTextLabel" parent="TimeStat"]
+margin_right = 335.0
+margin_bottom = 52.0
+theme = ExtResource( 1 )
+text = "Time:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stat" type="RichTextLabel" parent="TimeStat"]
+margin_left = 161.0
+margin_top = -1.0
+margin_right = 268.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+text = "0"
+scroll_active = false
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

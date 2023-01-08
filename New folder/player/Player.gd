@@ -5,6 +5,7 @@ export var MAX_SPEED = 150
 export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
+export var MAX_HEALTH = 5
 
 enum {
 	MOVE,

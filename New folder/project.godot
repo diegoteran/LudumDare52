@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Organ Harvest"
-run/main_scene="res://world/world.tscn"
+run/main_scene="res://Menus/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,6 +20,7 @@ Globals="*res://globals/globals.gd"
 UpgradeDict="*res://globals/upgradeDict.gd"
 LevelManager="*res://globals/levelManager.gd"
 SoundFx="*res://sound/sound_fx.tscn"
+ResearchManager="*res://globals/ResearchManager.gd"
 
 [display]
 
