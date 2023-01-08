@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://projectiles/weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://projectiles/ScalpelSwipe.tscn" type="PackedScene" id=2]
+
+[node name="Weapon" instance=ExtResource( 1 )]
+projectile = ExtResource( 2 )
+projectileSpeed = 150
+projectileAliveTime = 0.1
+projectileCritChance = 0.0
+projectileKnockback = 250
+fireRate = 0.5
+spray = 0
+BUFFER_DIST = 40

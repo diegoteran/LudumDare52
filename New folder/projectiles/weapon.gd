@@ -1,6 +1,6 @@
 extends Node2D
 
-var projectile = preload("res://projectiles/projectile.tscn")
+export var projectile = preload("res://projectiles/projectile.tscn")
 
 # How fast the bullet will be
 export var projectileSpeed = 10
@@ -23,7 +23,7 @@ export var automatic = false
 
 
 var cooldown = 0
-var BUFFER_DIST = 50
+export var BUFFER_DIST = 50
 
 func _process(delta):
 	cooldown = max(0, cooldown-delta)

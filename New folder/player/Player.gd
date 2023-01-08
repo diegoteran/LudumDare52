@@ -49,9 +49,6 @@ func _process(delta):
 			$Weapon.shoot(direction)
 		else:
 			$Weapon.auto_shoot(direction)
-			
-	if Input.is_action_pressed("debug"):
-		Globals.open_upgrade_menu_with_upgrades(0,1)
 
 
 func move():
