@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var ACCELERATION = 600
-export var MAX_SPEED = 150
+export var MAX_SPEED = 170
 export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
@@ -50,7 +50,6 @@ func _ready():
 	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
-	print(get_parent().get_node("Camera2D").get_path())
 	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
 	add_child(remoteTransform)
 

@@ -21,7 +21,7 @@ export var spray = 10
 # Whether or not the gun needs to be clicked for each bullet
 export var automatic = false
 # How much the gun pushes the user back while firing
-export var recoil = 350
+export var recoil = 20
 
 var cooldown = 0
 export var BUFFER_DIST = 50

@@ -1,12 +1,14 @@
 extends KinematicBody2D
 
 export var ENEMY_PROJECTILE : PackedScene
+export var __ = "Enemy Stats"
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
+export var ___ = "Attack cooldown stuff"
 export var ATTACK_COOLDOWN = 4.0
 export var ATTACK_COOLDOWN_RANGE = 3.0
 export var BUFFER_DIST = 30
@@ -79,11 +81,8 @@ func _physics_process(delta):
 				state = IDLE
 		
 		ATTACK:
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			animationPlayer.play("Attack")
-			if player != null:
-				accelerate_towards_point(distance_from_player(player.global_position), delta)
-			else:
-				state = IDLE
 			
 	
 	# For enemies to stay away from each other.

@@ -1,16 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/Art/enemies/Animations/Slime_walk.png" type="Texture" id=2]
-[ext_resource path="res://enemies/enemy.gd" type="Script" id=3]
+[ext_resource path="res://enemies/enemy_cat.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/Art/enemies/Animations/Cat_attack.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/Art/enemies/Animations/Cat_walk.png" type="Texture" id=5]
 [ext_resource path="res://projectiles/enemy/enemy_projectile_cat.tscn" type="PackedScene" id=6]
-[ext_resource path="res://pickups/tailDrop.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack"
-length = 1.0
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -31,11 +29,20 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 0.666667, 0.916667, 0.917667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "end_attack"
 } ]
 }
 tracks/2/type = "value"
@@ -183,11 +190,6 @@ tracks/3/keys = {
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 ENEMY_PROJECTILE = ExtResource( 6 )
-DISTANCE_FROM_PLAYER = 50
-ATTACK_COOLDOWN = 1.0
-ATTACK_COOLDOWN_RANGE = 0.5
-BUFFER_DIST = 10
-drop = ExtResource( 7 )
 
 [node name="Sprite" parent="." index="1"]
 self_modulate = Color( 1, 1, 1, 1 )
@@ -199,7 +201,7 @@ hframes = 8
 position = Vector2( 0, 10 )
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2( 0, 8 )
+position = Vector2( 3, 7 )
 
 [node name="CollisionShape2D2" parent="HurtBox" index="2"]
 position = Vector2( 0, 7 )
