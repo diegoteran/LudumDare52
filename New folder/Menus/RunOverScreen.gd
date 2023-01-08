@@ -14,6 +14,5 @@ func update_values():
 	time_count.text = str(LevelManager.total_time)
 
 
-
 func _on_Button_pressed():
 	Globals.change_to_research()

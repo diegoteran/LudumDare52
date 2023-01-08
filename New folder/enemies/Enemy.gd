@@ -7,6 +7,7 @@ export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
 export var ATTACK_RATE = 3
+export var DROP_CHANCE = 0.3
 var hp = MAX_HP setget set_hp
 
 enum {
@@ -16,6 +17,8 @@ enum {
 	ATTACK,
 	DEAD
 }
+
+export var drop = preload("res://pickups/pickup.tscn")
 
 onready var sprite = $Sprite
 onready var hurtBox = $HurtBox
@@ -79,6 +82,10 @@ func hit_something():
 
 func on_death():
 	LevelManager.enemyDied()
+	if rand_range(0,1) < DROP_CHANCE:
+		var drop_inst = drop.instance()
+		Globals.level_root().call_deferred("add_child", drop_inst)
+		drop_inst.global_position = global_position
 	queue_free()
 
 func _on_HurtBox_area_entered(area):

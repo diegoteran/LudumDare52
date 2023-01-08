@@ -8,22 +8,36 @@ var upgradeMenu = preload("res://Menus/TempUpgradeMenu.tscn")
 var level_num = 0
 var max_levels = 5
 
+var pickup_count = 0
+var room_cleared = false
+
 var total_killed = 0
 var total_time = 0
 
 func _process(delta):
 	if Globals.paused:
 		return
-	total_time += delta
+	if !room_cleared:
+		total_time += delta
+	if room_cleared and pickup_count <= 0:
+		if level_num > max_levels:
+			Globals.change_to_run_end()
+			Globals.paused = true
+		else:
+			open_upgrade_menu_with_upgrades(0,1)
 
 func startNewRun():
 	ResearchManager.apply_upgrades()
 	total_killed = 0
 	total_time = 0
 	level_num = 0
+	Globals.paused = false
 	startLevel()
 
 func startLevel():
+	room_cleared = false
+	pickup_count = 0
+	
 	var numEnemies = rand_range(5,10)
 	spawnEnemies(numEnemies)
 	
@@ -50,10 +64,7 @@ func enemyDied():
 	enemiesAlive -= 1
 	if enemiesAlive <= 0:
 		print("all enemies dead")
-		if level_num > max_levels:
-			Globals.change_to_run_end()
-		else:
-			open_upgrade_menu_with_upgrades(0,1)
+		room_cleared = true
 
 func open_upgrade_menu_with_upgrades(upgrade1, upgrade2):
 	Globals.paused = true
