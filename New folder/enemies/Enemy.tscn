@@ -60,7 +60,10 @@ percent_visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
+[node name="AttackTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 
 [editable path="HitBox"]
 [editable path="SoftCollision"]

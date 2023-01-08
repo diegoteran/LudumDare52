@@ -31,7 +31,6 @@ func _process(delta):
 	
 	if (fade):
 		if SPREAD_AT_CONTACT:
-			print('spread')
 			SPREAD_AT_CONTACT = false
 			spread_at_contact()
 		hitbox.collision_layer = 0

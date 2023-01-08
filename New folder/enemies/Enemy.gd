@@ -1,12 +1,13 @@
 extends KinematicBody2D
 
+export var ENEMY_PROJECTILE : PackedScene
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
-export var ATTACK_RATE = 3
+export var ATTACK_COOLDOWN = 5
 export var DROP_CHANCE = 0.3
 var hp = MAX_HP setget set_hp
 
@@ -26,6 +27,9 @@ onready var hitBox = $HitBox
 onready var debug = $Debug
 onready var softCollision = $SoftCollision
 onready var healthBar = $HealthBar
+onready var attackTimer = $AttackTimer
+onready var animationPlayer = $AnimationPlayer
+
 var state = CHASE
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
@@ -42,8 +46,12 @@ func set_hp(new_value):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_attack_cooldown()
 	player = Globals.get_player()
 	$HealthBar.max_value = MAX_HP
+
+func set_attack_cooldown():
+	attackTimer.start(ATTACK_COOLDOWN + (rand_range(-1, 1)))
 
 func _physics_process(delta):
 	if Globals.paused:
@@ -62,10 +70,19 @@ func _physics_process(delta):
 #			seek_player()
 			
 		CHASE:
+			animationPlayer.play("Move")
 			if player != null:
 				accelerate_towards_point(distance_from_player(player.global_position), delta)
 			else:
 				state = IDLE
+		
+		ATTACK:
+			animationPlayer.play("Attack")
+			if player != null:
+				accelerate_towards_point(distance_from_player(player.global_position), delta)
+			else:
+				state = IDLE
+			
 	
 	# For enemies to stay away from each other.
 	if softCollision.is_colliding():
@@ -98,3 +115,12 @@ func _on_HurtBox_area_entered(area):
 
 func distance_from_player(player_position):
 	return player_position + player_position.direction_to(global_position).normalized() * DISTANCE_FROM_PLAYER
+
+
+func _on_AttackTimer_timeout():
+	print("attack")
+	state = ATTACK
+
+func end_attack():
+	set_attack_cooldown()
+	state = CHASE
