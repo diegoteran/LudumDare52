@@ -20,3 +20,6 @@ func get_player():
 	
 func level_root():
 	return get_tree().root
+
+func level_ui():
+	return get_tree().root.get_node("world/UI")

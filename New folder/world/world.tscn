@@ -141,10 +141,14 @@ tile_data = PoolIntArray( -1, 3, 0, -65536, 0, 0, -65535, 5, 0, -65534, 5, 0, -6
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 249, 126 )
 
+[node name="Enemies" type="YSort" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 limit_left = -16
 limit_top = -64
 limit_right = 1296
-limit_bottom = 600
+limit_bottom = 714
 smoothing_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]

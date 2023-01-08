@@ -36,7 +36,7 @@ func enemyDied():
 func open_upgrade_menu_with_upgrades(upgrade1, upgrade2):
 	Globals.paused = true
 	var menu = upgradeMenu.instance()
-	Globals.level_root().add_child(menu)
+	Globals.level_ui().add_child(menu)
 	var basePath = "res://UpgradesAndMenus/Upgrades/"
 	var upgrade1Script = load(basePath + UpgradeDict.upgrades[upgrade1])
 	menu.upgrade1.set_script(upgrade1Script)
