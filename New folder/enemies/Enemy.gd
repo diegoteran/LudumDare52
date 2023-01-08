@@ -5,6 +5,7 @@ export var MAX_SPEED = 50
 export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
+export var DISTANCE_FROM_PLAYER = 100
 var hp = MAX_HP setget set_hp
 
 enum {
@@ -58,7 +59,7 @@ func _physics_process(delta):
 			
 		CHASE:
 			if player != null:
-				accelerate_towards_point(player.global_position, delta)
+				accelerate_towards_point(distance_from_player(player.global_position), delta)
 			else:
 				state = IDLE
 	
@@ -86,3 +87,6 @@ func _on_HurtBox_area_entered(area):
 	knockback += area.knockback * area.knockbackDirection
 	area.get_parent().hit_something()
 	pass # Replace with function body.
+
+func distance_from_player(player_position):
+	return player_position + player_position.direction_to(global_position).normalized() * DISTANCE_FROM_PLAYER
