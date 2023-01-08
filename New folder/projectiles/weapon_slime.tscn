@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://projectiles/weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://projectiles/projectile_slime.tscn" type="PackedScene" id=2]
+
+[node name="Weapon" instance=ExtResource( 1 )]
+projectile = ExtResource( 2 )
+projectileSpeed = 400
+projectileDmg = 2
+projectileAliveTime = 1.0
+projectileCritDmg = 4
+projectileCritChance = 0.2
+projectileKnockback = 10
+fireRate = 1.0
+BUFFER_DIST = 20

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wall_corner_R(1).png-dcf1bbb52c5a80af101e08c381b0bc01.stex"
+path="res://.import/Scorpion Cat.png-ebf767c444351a66b134a8692d2f8385.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Art/tiles/Wall_corner_R(1).png"
-dest_files=[ "res://.import/Wall_corner_R(1).png-dcf1bbb52c5a80af101e08c381b0bc01.stex" ]
+source_file="res://assets/art/Art/enemies/Scorpion Cat.png"
+dest_files=[ "res://.import/Scorpion Cat.png-ebf767c444351a66b134a8692d2f8385.stex" ]
 
 [params]
 

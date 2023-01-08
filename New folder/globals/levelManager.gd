@@ -2,7 +2,7 @@ extends Node
 
 const DELTA = 20
 
-var enemy = preload("res://enemies/Enemy.tscn")
+var enemy = preload("res://enemies/enemy_slime.tscn")
 var enemiesAlive = 0
 var upgradeMenu = preload("res://Menus/TempUpgradeMenu.tscn")
 var level_num = 0

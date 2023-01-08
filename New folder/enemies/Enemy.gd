@@ -6,6 +6,7 @@ export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
+export var ATTACK_RATE = 3
 var hp = MAX_HP setget set_hp
 
 enum {
@@ -71,7 +72,7 @@ func _physics_process(delta):
 func accelerate_towards_point(point, delta):
 	var direction = global_position.direction_to(point)
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
-	sprite.flip_h = velocity.x < 0
+	sprite.flip_h = velocity.x > 0
 
 func hit_something():
 	print("HIT THE HUMAN")
