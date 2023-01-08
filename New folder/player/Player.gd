@@ -5,7 +5,9 @@ export var MAX_SPEED = 150
 export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
-export var MAX_HEALTH = 5
+export var MAX_HEALTH = 10
+
+export var WEAPON: PackedScene
 
 var health = 5 setget set_health
 
@@ -23,6 +25,7 @@ onready var debug = $Debug
 
 var state = MOVE
 var velocity = Vector2.ZERO
+var knockback = Vector2.ZERO
 
 signal health_changed(value)
 
@@ -35,10 +38,12 @@ func set_health(value):
 
 func on_death():
 	print("player died")
+	Globals.change_to_run_end()
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(WEAPON.instance())
 	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
@@ -80,6 +85,9 @@ func move():
 	velocity = move_and_slide(velocity)
 
 func move_state(delta):
+	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+	knockback = move_and_slide(knockback)
+	
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -96,3 +104,4 @@ func move_state(delta):
 func _on_HurtBox_area_entered(area):
 	print("player hit by damage: " + str(area.damage))
 	self.health = health - area.damage
+	knockback += area.knockback * area.knockbackDirection

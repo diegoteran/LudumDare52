@@ -2,12 +2,12 @@ extends Node
 
 const DELTA = 20
 
-var enemy = preload("res://enemies/enemy_slime.tscn")
+var enemies = [preload("res://enemies/enemy_slime.tscn"), preload("res://enemies/enemy_puffer.tscn")]
 var enemiesAlive = 0
 var upgradeMenu = preload("res://Menus/TempUpgradeMenu.tscn")
 var level_num = 0
 var max_levels = 5
-
+var enemy_count = [2,5,10,15,20,25,30]
 var pickup_count = 0
 var room_cleared = false
 
@@ -27,6 +27,7 @@ func _process(delta):
 			open_upgrade_menu_with_upgrades(0,1)
 
 func startNewRun():
+	Globals.clear_entities()
 	ResearchManager.apply_upgrades()
 	total_killed = 0
 	total_time = 0
@@ -35,11 +36,11 @@ func startNewRun():
 	startLevel()
 
 func startLevel():
+	Globals.clear_entities()
 	room_cleared = false
 	pickup_count = 0
 	
-	var numEnemies = rand_range(5,10)
-	spawnEnemies(numEnemies)
+	spawnEnemies(enemy_count[level_num])
 	
 	# TODO: FIX
 	SoundFx.play_music("what_must_be_done")
@@ -50,7 +51,8 @@ func spawnEnemies(numEnemies):
 	# Determine valid positions
 	# Get random assortment of enemies
 	for i in range(numEnemies):
-		var newEnemy = enemy.instance()
+		var index = randi()%2
+		var newEnemy = enemies[index].instance()
 		Globals.level_root().call_deferred("add_child", newEnemy)
 		var enemyPos = Globals.get_player().global_position
 		enemyPos += (Vector2(50,50) + Vector2(1,1)*rand_range(1,500)).rotated(deg2rad(rand_range(0,360)))

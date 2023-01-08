@@ -9,6 +9,7 @@ export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
 export var ATTACK_COOLDOWN = 4.0
 export var ATTACK_COOLDOWN_RANGE = 3.0
+export var BUFFER_DIST = 30
 export var DROP_CHANCE = 0.3
 var hp = MAX_HP setget set_hp
 
@@ -120,6 +121,14 @@ func distance_from_player(player_position):
 
 func _on_AttackTimer_timeout():
 	state = ATTACK
+
+func shoot():
+	var p = ENEMY_PROJECTILE.instance()
+	Globals.level_root().add_child(p)
+	var shootDirection = (Globals.get_player().global_position - global_position).normalized()
+	p.global_position = global_position + (shootDirection * BUFFER_DIST)
+	p.shoot(shootDirection)
+	end_attack()
 
 func end_attack():
 	set_attack_cooldown()

@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var ALIVE_TIME = 0.5
+export var ALIVE_TIME = 3
 export var SPEED = 100
-export var DMG = 10.0
+export var DMG = 1
 export var CRIT_DMG = 5.0
 export var CRIT_CHANCE = 0.1 
 export var KNOCKBACK = 1.0

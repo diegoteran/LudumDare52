@@ -39,11 +39,38 @@ func level_root():
 func level_ui():
 	return level_root().get_node("world/UI")
 
+func clear_enemies():
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		enemy.queue_free()
+	pass
+
+func clear_projectiles():
+	var projectiles = get_tree().get_nodes_in_group("projectile")
+	for projectile in projectiles:
+		projectile.queue_free()
+
+func clear_pickups():
+	var pickups = get_tree().get_nodes_in_group("pickup")
+	for pickup in pickups:
+		pickup.queue_free()
+	LevelManager.pickup_count = 0
+
+func clear_entities():
+	clear_enemies()
+	clear_pickups()
+	clear_projectiles()
+
 func change_to_research():
+	clear_entities()
+	Globals.paused = true
 	get_tree().change_scene("res://menus/ResearchScreen.tscn")
 
 func change_to_run_end():
+	clear_entities()
+	Globals.paused = true
 	get_tree().change_scene("res://menus/RunOverScreen.tscn")
 
 func change_to_dungeon():
+	clear_entities()
 	get_tree().change_scene("res://world/world.tscn")
