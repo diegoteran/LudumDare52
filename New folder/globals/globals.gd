@@ -1,5 +1,8 @@
 extends Node
 
+const WORLD_WIDTH = 1280
+const WORLD_HEIGHT = 600
+
 var player
 var paused = false;
 

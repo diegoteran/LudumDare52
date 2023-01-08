@@ -1,5 +1,7 @@
 extends Node
 
+const DELTA = 20
+
 var enemy = preload("res://enemies/Enemy.tscn")
 var enemiesAlive = 0
 var upgradeMenu = preload("res://UpgradesAndMenus/Menus/TempUpgradeMenu.tscn")
@@ -16,6 +18,8 @@ func spawnEnemies(numEnemies):
 		Globals.level_root().call_deferred("add_child", newEnemy)
 		var enemyPos = Globals.get_player().global_position
 		enemyPos += (Vector2(50,50) + Vector2(1,1)*rand_range(1,500)).rotated(deg2rad(rand_range(0,360)))
+		enemyPos.x = min(Globals.WORLD_WIDTH - DELTA, max(DELTA, enemyPos.x))
+		enemyPos.y = min(Globals.WORLD_HEIGHT - DELTA, max(DELTA, enemyPos.y))
 		newEnemy.global_position = enemyPos
 		enemiesAlive += 1
 		
