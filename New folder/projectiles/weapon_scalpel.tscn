@@ -5,6 +5,7 @@
 
 [node name="Weapon" instance=ExtResource( 1 )]
 projectile = ExtResource( 2 )
+sound_string = "slime_jump"
 projectileSpeed = 150
 projectileAliveTime = 0.1
 projectileCritDmg = 2

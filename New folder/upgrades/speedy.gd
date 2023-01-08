@@ -8,6 +8,6 @@ func setValues():
 
 func apply_upgrade():
 	var player = Globals.get_player()
-	player.MAX_SPEED *= 1.5
+	player.MAX_SPEED *= 1.3
 	
 

@@ -5,12 +5,12 @@ export var MAX_SPEED = 170
 export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
-export var MAX_HEALTH = 10
+export var MAX_HEALTH = 3
 export var HEALTH_REGEN = 0
 
 export var WEAPON: PackedScene
 
-var health = 5 setget set_health
+var health = MAX_HEALTH setget set_health
 
 var fixedHealth = false
 

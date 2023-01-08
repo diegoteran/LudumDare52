@@ -18,5 +18,4 @@ func _on_Area2D_area_entered(area):
 	pass # Replace with function body.
 
 func collect():
-	print("Been picked up")
-	pass
+	SoundFx.play("menu", global_position, rand_range(0.9, 1.3))

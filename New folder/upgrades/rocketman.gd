@@ -10,7 +10,7 @@ func apply_upgrade():
 	var player = Globals.get_player()
 	var weapon = player.get_node("Weapon")
 	
-	weapon.projectileDmg *= 4
-	weapon.recoil = 1000
+	weapon.projectileDmg += 2
+	weapon.recoil += 100
 	
 

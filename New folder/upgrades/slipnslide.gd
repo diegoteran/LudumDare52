@@ -11,7 +11,7 @@ func apply_upgrade():
 	var weapon = player.get_node("Weapon")
 	
 	player.MAX_SPEED *= 2
-	player.FRICTION /= 10
+	player.FRICTION /= 3
 	player.FRICTION = max(player.FRICTION, 200)
 	
 

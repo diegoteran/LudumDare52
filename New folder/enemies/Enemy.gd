@@ -105,6 +105,7 @@ func on_death():
 		var drop_inst = drop.instance()
 		Globals.level_root().call_deferred("add_child", drop_inst)
 		drop_inst.global_position = global_position
+	SoundFx.play("dead", global_position, rand_range(0.5, 1))
 	queue_free()
 
 func _on_HurtBox_area_entered(area):
