@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://world/world.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/Art/tiles/Wall_corner_R.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/art/Art/tiles/Wall_top.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/Art/tiles/Wall_side_L.png" type="Texture" id=6]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/health_ui.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -152,3 +153,9 @@ limit_bottom = 714
 smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="UI" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 360.0

@@ -7,9 +7,6 @@
 ALIVE_TIME = 2.0
 SPEED = 120
 
-[node name="HitBox" parent="." index="1"]
-collision_mask = 4
-
 [node name="Sprite" parent="." index="2"]
 texture = ExtResource( 2 )
 

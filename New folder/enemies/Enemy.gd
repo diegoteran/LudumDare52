@@ -7,7 +7,8 @@ export var FRICTION = 200
 export var KNOCKBACK_FRICTION = 150
 export var MAX_HP = 5
 export var DISTANCE_FROM_PLAYER = 100
-export var ATTACK_COOLDOWN = 5
+export var ATTACK_COOLDOWN = 4.0
+export var ATTACK_COOLDOWN_RANGE = 3.0
 export var DROP_CHANCE = 0.3
 var hp = MAX_HP setget set_hp
 
@@ -51,7 +52,7 @@ func _ready():
 	$HealthBar.max_value = MAX_HP
 
 func set_attack_cooldown():
-	attackTimer.start(ATTACK_COOLDOWN + (rand_range(-1, 1)))
+	attackTimer.start(ATTACK_COOLDOWN + (rand_range(-ATTACK_COOLDOWN_RANGE, ATTACK_COOLDOWN_RANGE)))
 
 func _physics_process(delta):
 	if Globals.paused:
@@ -118,7 +119,6 @@ func distance_from_player(player_position):
 
 
 func _on_AttackTimer_timeout():
-	print("attack")
 	state = ATTACK
 
 func end_attack():

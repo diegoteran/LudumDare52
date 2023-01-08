@@ -7,6 +7,8 @@ export var FRICTION = 4000
 export var ATTACK_SPEED = 15
 export var MAX_HEALTH = 5
 
+var health = 5 setget set_health
+
 enum {
 	MOVE,
 	ROLL,
@@ -20,8 +22,22 @@ onready var debug = $Debug
 var state = MOVE
 var velocity = Vector2.ZERO
 
+signal health_changed(value)
+
+func set_health(value):
+	health = value
+	emit_signal("health_changed", value)
+	print("healthhh " + str(value))
+	if health <= 0:
+		on_death()
+
+func on_death():
+	print("player died")
+	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
 	print(get_parent().get_node("Camera2D").get_path())
@@ -70,4 +86,5 @@ func move_state(delta):
 
 
 func _on_HurtBox_area_entered(area):
-	print('enemy attacked me')
+	print("player hit by damage: " + str(area.damage))
+	self.health = health - area.damage

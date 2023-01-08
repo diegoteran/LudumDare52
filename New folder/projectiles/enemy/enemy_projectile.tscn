@@ -78,6 +78,9 @@ shader_param/add_margins = true
 DMG = 1.0
 CRIT_CHANCE = 0.0
 
+[node name="HitBox" parent="." index="1"]
+collision_mask = 4
+
 [node name="Sprite" parent="." index="2"]
 material = SubResource( 2 )
 
