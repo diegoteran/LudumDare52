@@ -37,7 +37,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 func shoot(direction):
-	look_at(get_global_mouse_position() + direction.normalized()*500)
+	look_at(global_position + direction.normalized()*500)
 	velocity = SPEED*direction.normalized()
 	hitbox.damage = DMG
 	if rand_range(0,1) < CRIT_CHANCE:
