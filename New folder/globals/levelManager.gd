@@ -2,7 +2,7 @@ extends Node
 
 const DELTA = 100
 
-var enemies = [preload("res://enemies/enemy_slime.tscn"), preload("res://enemies/enemy_puffer.tscn")]
+var enemies = [preload("res://enemies/enemy_slime.tscn"), preload("res://enemies/enemy_puffer.tscn"), preload("res://enemies/enemy_cat.tscn")]
 var enemiesAlive = 0
 var upgradeMenu = preload("res://Menus/TempUpgradeMenu.tscn")
 var level_num = 0
@@ -74,7 +74,7 @@ func spawnEnemies(numEnemies):
 	# Determine valid positions
 	# Get random assortment of enemies
 	for i in range(numEnemies):
-		var index = randi()%2
+		var index = randi()%len(enemies)
 		var newEnemy = enemies[index].instance()
 		Globals.level_root().call_deferred("add_child", newEnemy)
 		randomlyPlace(newEnemy)

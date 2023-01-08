@@ -13,6 +13,7 @@ var health = 5 setget set_health
 
 var fixedHealth = false
 
+
 enum {
 	MOVE,
 	ROLL,
@@ -26,6 +27,7 @@ onready var debug = $Debug
 var state = MOVE
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+onready var sprite = $Sprite
 
 signal health_changed(value)
 
@@ -83,6 +85,7 @@ func _process(delta):
 
 func move():
 	velocity = move_and_slide(velocity)
+	sprite.flip_h = velocity.x < 0
 
 func move_state(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
