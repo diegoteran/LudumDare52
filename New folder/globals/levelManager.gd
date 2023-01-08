@@ -11,15 +11,25 @@ var enemy_count = [2,5,10,15,20,25,30]
 var pickup_count = 0
 var room_cleared = false
 
+var run_started = false
+
 var total_killed = 0
 var total_time = 0
 
 func _process(delta):
 	if Globals.paused:
 		return
+	if !run_started:
+		return;
+	
+	enemiesAlive = len(get_tree().get_nodes_in_group("enemy"))
+	room_cleared = (enemiesAlive == 0)
+	
 	if !room_cleared:
 		total_time += delta
-	if room_cleared and pickup_count <= 0:
+	if room_cleared:
+		if (len(get_tree().get_nodes_in_group("pickup")) > 0):
+			return;
 		if level_num > max_levels:
 			Globals.change_to_run_end()
 			Globals.paused = true
@@ -37,6 +47,7 @@ func startNewRun():
 	total_time = 0
 	level_num = 0
 	Globals.paused = false
+
 	startLevel()
 
 func startLevel():
@@ -50,7 +61,8 @@ func startLevel():
 	# TODO: FIX
 	SoundFx.play_music("what_must_be_done")
 	level_num += 1
-
+	run_started = true
+	
 func randomlyPlace(newEnemy):
 		var enemyPos = Vector2(Globals.WORLD_WIDTH/2, Globals.WORLD_HEIGHT/2)
 		enemyPos += (Vector2(50,50) + Vector2(1,1)*rand_range(1,500)).rotated(deg2rad(rand_range(0,360)))
@@ -70,10 +82,7 @@ func spawnEnemies(numEnemies):
 		
 func enemyDied():
 	total_killed += 1
-	enemiesAlive -= 1
-	if enemiesAlive <= 0:
-		print("all enemies dead")
-		room_cleared = true
+
 
 func open_upgrade_menu_with_upgrades(upgrade1, upgrade2):
 	Globals.paused = true

@@ -10,5 +10,8 @@ func apply_upgrade():
 	var weapon = Globals.get_player().get_node("Weapon")
 	weapon.fireRate = 0.1
 	weapon.projectileDmg *= 0.25
+	weapon.automatic = true
+	weapon.spray += 30
+	weapon.projectileAliveTime *= 1.5
 	
 

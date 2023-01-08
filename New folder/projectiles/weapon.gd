@@ -20,7 +20,8 @@ export var fireRate = 0.1
 export var spray = 10
 # Whether or not the gun needs to be clicked for each bullet
 export var automatic = false
-
+# How much the gun pushes the user back while firing
+export var recoil = 350
 
 var cooldown = 0
 export var BUFFER_DIST = 50
@@ -52,4 +53,5 @@ func shoot(direction):
 	Globals.level_root().add_child(p)
 	direction = direction.rotated(deg2rad(rand_range(-spray, spray)))
 	p.shoot(direction)
+	get_parent().knockback += direction * -1 * recoil
 	cooldown = fireRate

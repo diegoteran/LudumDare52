@@ -101,7 +101,7 @@ func hit_something():
 
 func on_death():
 	LevelManager.enemyDied()
-	if rand_range(0,1) < DROP_CHANCE:
+	if (rand_range(0,1) - Globals.luck) < DROP_CHANCE:
 		var drop_inst = drop.instance()
 		Globals.level_root().call_deferred("add_child", drop_inst)
 		drop_inst.global_position = global_position

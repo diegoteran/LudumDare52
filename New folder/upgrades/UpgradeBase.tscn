@@ -16,16 +16,16 @@ margin_bottom = 79.0
 texture = SubResource( 1 )
 
 [node name="Name" type="RichTextLabel" parent="."]
-margin_left = 31.0
-margin_top = 78.0
+margin_left = 21.0
+margin_top = 74.0
 margin_right = 125.0
-margin_bottom = 92.0
+margin_bottom = 105.0
 theme = ExtResource( 2 )
 text = "UPGRADE NAME"
 
 [node name="Description" type="RichTextLabel" parent="."]
 margin_left = 9.0
-margin_top = 100.0
+margin_top = 112.0
 margin_right = 157.0
 margin_bottom = 169.0
 theme = ExtResource( 2 )
