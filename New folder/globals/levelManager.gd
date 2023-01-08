@@ -1,6 +1,6 @@
 extends Node
 
-const DELTA = 20
+const DELTA = 100
 
 var enemies = [preload("res://enemies/enemy_slime.tscn"), preload("res://enemies/enemy_puffer.tscn")]
 var enemiesAlive = 0
@@ -24,7 +24,11 @@ func _process(delta):
 			Globals.change_to_run_end()
 			Globals.paused = true
 		else:
-			open_upgrade_menu_with_upgrades(0,1)
+			var upgrade1 = randi()%len(UpgradeDict.upgrades)
+			var upgrade2 = randi()%len(UpgradeDict.upgrades)
+			while(upgrade2 == upgrade1):
+				upgrade2 = randi()%len(UpgradeDict.upgrades)
+			open_upgrade_menu_with_upgrades(upgrade1,upgrade2)
 
 func startNewRun():
 	Globals.clear_entities()
@@ -39,6 +43,7 @@ func startLevel():
 	Globals.clear_entities()
 	room_cleared = false
 	pickup_count = 0
+	Globals.get_player().global_position = Vector2(Globals.WORLD_WIDTH/2, Globals.WORLD_HEIGHT/2) 
 	
 	spawnEnemies(enemy_count[level_num])
 	
@@ -46,6 +51,12 @@ func startLevel():
 	SoundFx.play_music("what_must_be_done")
 	level_num += 1
 
+func randomlyPlace(newEnemy):
+		var enemyPos = Vector2(Globals.WORLD_WIDTH/2, Globals.WORLD_HEIGHT/2)
+		enemyPos += (Vector2(50,50) + Vector2(1,1)*rand_range(1,500)).rotated(deg2rad(rand_range(0,360)))
+		enemyPos.x = min(Globals.WORLD_WIDTH - DELTA, max(DELTA, enemyPos.x))
+		enemyPos.y = min(Globals.WORLD_HEIGHT - DELTA, max(DELTA, enemyPos.y))
+		newEnemy.global_position = enemyPos
 	
 func spawnEnemies(numEnemies):
 	# Determine valid positions
@@ -54,11 +65,7 @@ func spawnEnemies(numEnemies):
 		var index = randi()%2
 		var newEnemy = enemies[index].instance()
 		Globals.level_root().call_deferred("add_child", newEnemy)
-		var enemyPos = Globals.get_player().global_position
-		enemyPos += (Vector2(50,50) + Vector2(1,1)*rand_range(1,500)).rotated(deg2rad(rand_range(0,360)))
-		enemyPos.x = min(Globals.WORLD_WIDTH - DELTA, max(DELTA, enemyPos.x))
-		enemyPos.y = min(Globals.WORLD_HEIGHT - DELTA, max(DELTA, enemyPos.y))
-		newEnemy.global_position = enemyPos
+		randomlyPlace(newEnemy)
 		enemiesAlive += 1
 		
 func enemyDied():
@@ -72,7 +79,7 @@ func open_upgrade_menu_with_upgrades(upgrade1, upgrade2):
 	Globals.paused = true
 	var menu = upgradeMenu.instance()
 	Globals.level_ui().add_child(menu)
-	var basePath = "res://Upgrades/"
+	var basePath = "res://upgrades/"
 	var upgrade1Script = load(basePath + UpgradeDict.upgrades[upgrade1])
 	menu.upgrade1.set_script(upgrade1Script)
 	menu.upgrade1.setValues()

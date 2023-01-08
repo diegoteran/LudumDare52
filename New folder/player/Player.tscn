@@ -23,6 +23,7 @@ WEAPON = ExtResource( 4 )
 texture = ExtResource( 1 )
 
 [node name="Debug" type="Label" parent="."]
+visible = false
 margin_left = -20.0
 margin_top = -51.0
 margin_right = 20.0

@@ -4,6 +4,7 @@ const WORLD_WIDTH = 1280
 const WORLD_HEIGHT = 600
 
 var player
+
 var paused = false;
 
 # Called when the node enters the scene tree for the first time.
@@ -27,8 +28,8 @@ func _process(delta):
 
 func set_player(player_ref):
 	player = player_ref
-	# FIX THIS LATER
 	LevelManager.startNewRun()
+	
 
 func get_player():
 	return player

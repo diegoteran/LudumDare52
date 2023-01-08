@@ -6,7 +6,7 @@
 [node name="Projectile" instance=ExtResource( 1 )]
 ALIVE_TIME = 2.0
 SPEED = 120
-KNOCKBACK = 250.0
+KNOCKBACK = 1000.0
 
 [node name="Sprite" parent="." index="2"]
 texture = ExtResource( 2 )

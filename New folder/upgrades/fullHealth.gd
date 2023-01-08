@@ -7,4 +7,5 @@ func setValues():
 	.setValues()
 
 func apply_upgrade():
-	print("Lets heal")
+	var player = Globals.get_player()
+	player.set_health(player.MAX_HEALTH)

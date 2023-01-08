@@ -105,3 +105,4 @@ func _on_HurtBox_area_entered(area):
 	print("player hit by damage: " + str(area.damage))
 	self.health = health - area.damage
 	knockback += area.knockback * area.knockbackDirection
+	area.get_parent().hit_something()
