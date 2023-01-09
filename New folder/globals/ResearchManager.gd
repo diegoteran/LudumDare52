@@ -28,6 +28,8 @@ var dash_upgrades = 0
 var dash_step = 5
 var DASH_COST = [1, 3, 5, 10, 50, 100]
 
+var FINAL_COST = 25
+
 var weaponUpgradeStepDict = {
 	"scalpel" : SCALPEL_DMG_STEP,
 	"slimegun" : SLIME_GUN_DMG_STEP,

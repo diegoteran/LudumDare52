@@ -1,7 +1,7 @@
 extends "res://upgrades/UpgradeBase.gd"
 
 func setValues():
-	upgradeName = "I'm a betting man"
+	upgradeName = "I'm a gambling man"
 	description  = "increased crit damage"
 	iconPath = "res://assets/art/programmerArt/greenHealthIGuess.png"
 	.setValues()

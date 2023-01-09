@@ -44,6 +44,8 @@ onready var stat_upgrades = $"Stat Upgrades"
 onready var weapon_upgrades = $"Weapon Upgrades"
 onready var swap_button = $SwapButton
 
+onready var finish_button = $Finish/Button
+
 onready var weapon_equip = $Equipped/WeaponName
 
 # Called when the node enters the scene tree for the first time.
@@ -117,6 +119,8 @@ func update_values():
 		blow_gun_level.text = str(ResearchManager.blow_gun_level)
 		blow_gun_equip.visible = true
 	blow_gun_cost.text = str(ResearchManager.LUNG_COST[min(ResearchManager.blow_gun_level, len(ResearchManager.LUNG_COST)-1)])
+	
+	finish_button.disabled = !(ResearchManager.scorpion_tails >= ResearchManager.FINAL_COST and ResearchManager.slime_skin >= ResearchManager.FINAL_COST and ResearchManager.puffer_lungs >= ResearchManager.FINAL_COST)
 
 func _on_Button_pressed():
 	Globals.change_to_dungeon()
@@ -195,4 +199,9 @@ func _on_blowgun_equip_pressed():
 	slime_gun_equip.disabled = false
 	scalpel_equip.disabled = false
 	blow_gun_equip.disabled = true
+	pass # Replace with function body.
+
+
+func _on_finish_pressed():
+	Globals.change_to_end()
 	pass # Replace with function body.

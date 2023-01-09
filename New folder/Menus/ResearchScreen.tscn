@@ -47,11 +47,14 @@ margin_right = 345.0
 margin_bottom = 455.0
 
 [node name="SkinCurrency" type="Control" parent="Inventory"]
-margin_left = 19.0
-margin_top = 43.0
-margin_right = 210.0
-margin_bottom = 87.0
+margin_left = 14.0
+margin_top = 44.0
+margin_right = 205.0
+margin_bottom = 88.0
 theme = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="count" type="RichTextLabel" parent="Inventory/SkinCurrency"]
 margin_left = 65.0
@@ -76,14 +79,11 @@ __meta__ = {
 }
 
 [node name="TailCurrency" type="Control" parent="Inventory"]
-margin_left = 106.0
-margin_top = 43.0
-margin_right = 297.0
-margin_bottom = 87.0
+margin_left = 111.0
+margin_top = 44.0
+margin_right = 302.0
+margin_bottom = 88.0
 theme = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="count" type="RichTextLabel" parent="Inventory/TailCurrency"]
 margin_left = 65.0
@@ -108,10 +108,10 @@ __meta__ = {
 }
 
 [node name="LungCurrency" type="Control" parent="Inventory"]
-margin_left = 192.0
-margin_top = 42.0
-margin_right = 383.0
-margin_bottom = 86.0
+margin_left = 209.0
+margin_top = 44.0
+margin_right = 400.0
+margin_bottom = 88.0
 theme = ExtResource( 5 )
 
 [node name="count" type="RichTextLabel" parent="Inventory/LungCurrency"]
@@ -714,6 +714,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Finish" type="Control" parent="."]
+margin_left = 11.0
+margin_top = 263.0
+margin_right = 260.0
+margin_bottom = 303.0
+theme = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Finish"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Do what must be done"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Finish"]
+margin_left = 201.0
+margin_top = 2.0
+margin_right = 378.0
+margin_bottom = 21.0
+text = "COST: 25 of Each"
+
 [connection signal="pressed" from="Stat Upgrades/HealthUpgrade/Button" to="." method="_on_health_button_pressed"]
 [connection signal="pressed" from="Stat Upgrades/SpeedUpgrade/Button" to="." method="_on_speed_button_pressed"]
 [connection signal="pressed" from="Stat Upgrades/DashUpgrade/Button" to="." method="_on_dash_button_pressed"]
@@ -725,3 +744,4 @@ __meta__ = {
 [connection signal="pressed" from="Weapon Upgrades/BlowGun/equip" to="." method="_on_blowgun_equip_pressed"]
 [connection signal="pressed" from="EnterDungeonButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_SwapButton_pressed"]
+[connection signal="pressed" from="Finish/Button" to="." method="_on_finish_pressed"]

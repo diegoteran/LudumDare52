@@ -107,3 +107,7 @@ func change_to_run_end():
 func change_to_dungeon():
 	clear_entities()
 	get_tree().change_scene("res://world/world.tscn")
+	
+func change_to_end():
+	clear_entities()
+	get_tree().change_scene("res://menus/EndScreen.tscn")
