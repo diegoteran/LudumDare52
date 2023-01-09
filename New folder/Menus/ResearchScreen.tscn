@@ -816,9 +816,9 @@ theme = SubResource( 2 )
 text = "Enter Dungeon"
 
 [node name="SwapButton" type="Button" parent="."]
-margin_left = 434.0
+margin_left = 417.0
 margin_top = 212.0
-margin_right = 622.0
+margin_right = 626.0
 margin_bottom = 245.0
 theme = ExtResource( 5 )
 text = "Swap to stat screen"

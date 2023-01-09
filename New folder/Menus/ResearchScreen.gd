@@ -125,7 +125,7 @@ func update_values():
 	finish_button.disabled = !(ResearchManager.scorpion_tails >= ResearchManager.FINAL_COST and ResearchManager.slime_skin >= ResearchManager.FINAL_COST and ResearchManager.puffer_lungs >= ResearchManager.FINAL_COST)
 
 func _on_Button_pressed():
-	SoundFx.play_menu("go")
+	SoundFx.play_menu("go", 1, -10)
 	Globals.change_to_dungeon()
 
 func _on_health_button_pressed():

@@ -19,25 +19,25 @@ color = Color( 0.219608, 0.219608, 0.219608, 0.870588 )
 [node name="MenuTitle" type="RichTextLabel" parent="."]
 margin_left = 170.0
 margin_top = 26.0
-margin_right = 465.0
+margin_right = 448.0
 margin_bottom = 63.0
 theme = ExtResource( 2 )
 text = "CHOOSE A REWARD"
 
 [node name="Upgrade1" type="Control" parent="."]
-margin_left = 97.0
-margin_top = 93.0
-margin_right = 137.0
-margin_bottom = 133.0
+margin_left = 59.0
+margin_top = 90.0
+margin_right = 99.0
+margin_bottom = 130.0
 
 [node name="Upgrade" parent="Upgrade1" instance=ExtResource( 1 )]
 margin_bottom = 334.0
 
 [node name="Upgrade2" type="Control" parent="."]
-margin_left = 373.0
-margin_top = 91.0
-margin_right = 413.0
-margin_bottom = 131.0
+margin_left = 347.0
+margin_top = 90.0
+margin_right = 387.0
+margin_bottom = 130.0
 
 [node name="Upgrade" parent="Upgrade2" instance=ExtResource( 1 )]
 margin_bottom = 334.0

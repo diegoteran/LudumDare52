@@ -7,10 +7,10 @@
 projectile = ExtResource( 2 )
 sound_string = "slime_jump"
 projectileSpeed = 1000
-projectileDmg = 3
+projectileDmg = 4
 projectileAliveTime = 1.0
 projectileCritDmg = 2
 projectileCritChance = 0.1
 projectileKnockback = 120
-fireRate = 2.0
+fireRate = 1.0
 spray = 0
