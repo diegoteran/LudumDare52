@@ -65,6 +65,11 @@ func level_enemies():
 		return level_root().get_node("world/YSort/Enemies")
 	return null
 
+func level_drops():
+	if level_root().has_node("world"):
+		return level_root().get_node("world/YSort/Drops")
+	return null
+
 func clear_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:

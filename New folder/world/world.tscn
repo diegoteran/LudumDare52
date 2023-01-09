@@ -163,6 +163,8 @@ position = Vector2( 249, 126 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
+[node name="Drops" type="YSort" parent="YSort"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 limit_left = -16

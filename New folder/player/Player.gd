@@ -9,6 +9,7 @@ export var MAX_HEALTH = 3
 export var HEALTH_REGEN = 0
 
 export var WEAPON: PackedScene
+export var WALK_EFFECT: PackedScene
 
 var health = MAX_HEALTH setget set_health
 
@@ -16,6 +17,7 @@ var fixedHealth = false
 
 
 enum {
+	IDLE,
 	MOVE,
 	ROLL,
 	ATTACK,
@@ -25,6 +27,7 @@ enum {
 
 onready var debug = $Debug
 onready var hurtBox = $HurtBox
+onready var animationPlayer = $AnimationPlayer
 
 var state = MOVE
 var velocity = Vector2.ZERO
@@ -71,6 +74,7 @@ func _physics_process(delta):
 	
 	match(state):
 		MOVE:
+			animationPlayer.play("Move")
 			move_state(delta)
 #		ROLL:
 #			roll_state(delta)
@@ -95,7 +99,10 @@ func _process(delta):
 
 func move():
 	velocity = move_and_slide(velocity)
-	sprite.flip_h = velocity.x < 0
+	sprite.flip_h = global_position.direction_to(get_global_mouse_position()).x < 0
+	
+	if velocity == Vector2.ZERO:
+		animationPlayer.play("Idle")
 
 func move_state(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -124,3 +131,12 @@ func _on_HurtBox_area_entered(area):
 	SoundFx.play("hurt", global_position, rand_range(0.8, 1.2))
 	Shake.shake(3, 1)
 	hurtBox.start_invincibility(2)
+
+func play_step():
+	SoundFx.play("hit", global_position, rand_range(0.4, 0.6), -15)
+	walk_effect()
+
+func walk_effect():
+	var instance = WALK_EFFECT.instance()
+	Globals.level_drops().call_deferred("add_child", instance)
+	instance.global_position = global_position - velocity.normalized()*3 + Vector2(0, 25)
