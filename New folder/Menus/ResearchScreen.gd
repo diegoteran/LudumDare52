@@ -128,24 +128,28 @@ func _on_Button_pressed():
 	Globals.change_to_dungeon()
 
 func _on_health_button_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.slime_skin -= ResearchManager.HEALTH_COST[min(ResearchManager.health_upgrades, len(ResearchManager.HEALTH_COST)-1)]
 	ResearchManager.health_upgrades += 1
 	update_values()
 	pass # Replace with function body.
 
 func _on_speed_button_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.puffer_lungs -= ResearchManager.SPEED_COST[min(ResearchManager.speed_upgrades, len(ResearchManager.SPEED_COST)-1)]
 	ResearchManager.speed_upgrades += 1
 	update_values()
 	pass # Replace with function body.
 
 func _on_dash_button_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.scorpion_tails -= ResearchManager.DASH_COST[min(ResearchManager.dash_upgrades, len(ResearchManager.DASH_COST)-1)]
 	ResearchManager.dash_upgrades += 1
 	update_values()
 	pass # Replace with function body.
 
 func _on_SwapButton_pressed():
+	SoundFx.on_button_pressed()
 	stat_upgrades.visible = !stat_upgrades.visible
 	weapon_upgrades.visible = !weapon_upgrades.visible
 	
@@ -156,24 +160,28 @@ func _on_SwapButton_pressed():
 	pass # Replace with function body.
 
 func _on_scalpel_buyButton_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.scorpion_tails -= ResearchManager.TAIL_COST[min(ResearchManager.scalpel_level, len(ResearchManager.TAIL_COST)-1)]
 	ResearchManager.scalpel_level += 1
 	update_values()
 	pass # Replace with function body.
 
 func _on_slimegun_buyButton_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.slime_skin -= ResearchManager.SLIME_COST[min(ResearchManager.slime_gun_level, len(ResearchManager.SLIME_COST)-1)]
 	ResearchManager.slime_gun_level += 1
 	update_values()
 	pass # Replace with function body.
 	
 func _on_blowgun_buyButton_pressed():
+	SoundFx.on_button_pressed()
 	ResearchManager.puffer_lungs -= ResearchManager.LUNG_COST[min(ResearchManager.blow_gun_level, len(ResearchManager.LUNG_COST)-1)]
 	ResearchManager.blow_gun_level += 1
 	update_values()
 	pass # Replace with function body.
 
 func _on_slime_equip_pressed():
+	SoundFx.on_button_pressed()
 	if ResearchManager.slime_gun_level <= 0:
 		return
 	Globals.weapon = "slimegun"
@@ -184,6 +192,7 @@ func _on_slime_equip_pressed():
 	pass # Replace with function body.
 
 func _on_scalpel_equip_pressed():
+	SoundFx.on_button_pressed()
 	if ResearchManager.scalpel_level <= 0:
 		return
 	Globals.weapon = "scalpel"
@@ -194,6 +203,7 @@ func _on_scalpel_equip_pressed():
 	pass # Replace with function body.
 
 func _on_blowgun_equip_pressed():
+	SoundFx.on_button_pressed()
 	if ResearchManager.blow_gun_level <= 0:
 		return
 	Globals.weapon = "blowgun"
@@ -205,5 +215,6 @@ func _on_blowgun_equip_pressed():
 
 
 func _on_finish_pressed():
+	SoundFx.on_button_pressed()
 	Globals.change_to_end()
 	pass # Replace with function body.

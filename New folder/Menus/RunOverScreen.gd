@@ -32,4 +32,5 @@ func update_values():
 
 
 func _on_Button_pressed():
+	SoundFx.on_button_pressed()
 	Globals.change_to_research()

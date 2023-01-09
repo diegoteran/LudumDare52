@@ -3,6 +3,8 @@ extends Node
 var sounds_path = "res://sound/sounds/"
 var music_path = "res://sound/music/"
 
+const SELECT_DURATION = 0.25
+
 # Keep sorted please
 var sounds = {
 	"dead" : load(sounds_path + "dead.wav"),
@@ -55,6 +57,9 @@ func play_menu(sound_string, pitch_scale = 1, volume_db = 0):
 			soundPlayer.play()
 			return
 	print("Too many sounds playing for menu at once.")
+
+func on_button_pressed():
+	play_menu("select")
 
 func play_music(sound_string):
 	queued_track = sound_string

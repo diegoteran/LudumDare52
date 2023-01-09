@@ -17,8 +17,11 @@ func _ready():
 
 
 func _on_Start_pressed():
+	SoundFx.on_button_pressed()
 	Globals.change_to_research()
 
 
 func _on_Close_pressed():
+	SoundFx.on_button_pressed()
+	yield(get_tree().create_timer(SoundFx.SELECT_DURATION), "timeout")
 	get_tree().quit()
