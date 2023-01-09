@@ -3,8 +3,6 @@ extends Node
 var sounds_path = "res://sound/sounds/"
 var music_path = "res://sound/music/"
 
-onready var tween = $Music/Tween
-
 # Keep sorted please
 var sounds = {
 	"dead" : load(sounds_path + "dead.wav"),
@@ -30,8 +28,9 @@ var music ={
 onready var sound_players = get_node("2D").get_children()
 onready var sound_players_menu = get_node("Menu").get_children()
 onready var music_player = $Music/AudioStreamPlayer
+onready var tween = $Music/Tween
 
-var queued_track : String
+var queued_track : String = ""
 
 func play(sound_string, from_location, pitch_scale = 1, volume_db = 0):
 	for soundPlayer in sound_players:
@@ -65,11 +64,14 @@ func play_music(sound_string):
 func start_music():
 	music_player.stream = music[queued_track]
 	music_player.play()
+	queued_track = ""
 
 func fade_out():
-	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
 
 func _on_Tween_tween_completed(object, _key):
 	object.stop()
 	object.volume_db = 0
+	if queued_track != "":
+		start_music()

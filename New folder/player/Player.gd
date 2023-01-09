@@ -45,20 +45,20 @@ func on_death():
 	if state == DEAD:
 		return
 	print("player died")
-	Globals.change_to_run_end()
+	
 	SoundFx.play("dead", global_position)
 	SoundFx.play_menu("game_over_cadence")
 	SoundFx.fade_out()
 	
 	state = DEAD
-	pass
+	Globals.change_to_run_end()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
-	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
+	remoteTransform.set_remote_node(Globals.level_camera().get_path())
 	add_child(remoteTransform)
 
 func add_weapon():

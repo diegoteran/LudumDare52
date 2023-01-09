@@ -60,6 +60,11 @@ func level_camera():
 		return level_root().get_node("world/Camera2D")
 	return null
 
+func level_enemies():
+	if level_root().has_node("world"):
+		return level_root().get_node("world/YSort/Enemies")
+	return null
+
 func clear_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
@@ -85,6 +90,7 @@ func clear_entities():
 func change_to_research():
 	clear_entities()
 	Globals.paused = true
+	SoundFx.play_music("where_does_this_path_lead")
 	get_tree().change_scene("res://menus/ResearchScreen.tscn")
 
 func change_to_run_end():
