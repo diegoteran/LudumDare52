@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/upheaval/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menus/TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://Menus/TitleTheme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/art/Art/UI/Title.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -16,12 +17,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+texture = ExtResource( 4 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 649.0
 margin_bottom = 374.0
 color = Color( 0.368627, 0.364706, 0.631373, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 154.0
 margin_top = 106.0
 margin_right = 473.0
@@ -30,18 +38,18 @@ theme = ExtResource( 3 )
 text = "UNTITLED ORGAN GAME"
 
 [node name="Start" type="Button" parent="."]
-margin_left = 157.0
-margin_top = 281.0
-margin_right = 262.0
-margin_bottom = 315.0
+margin_left = 440.0
+margin_top = 302.0
+margin_right = 545.0
+margin_bottom = 336.0
 theme = SubResource( 2 )
 text = "START"
 
 [node name="Close" type="Button" parent="."]
-margin_left = 277.0
-margin_top = 281.0
-margin_right = 307.0
-margin_bottom = 315.0
+margin_left = 560.0
+margin_top = 302.0
+margin_right = 590.0
+margin_bottom = 336.0
 theme = SubResource( 2 )
 text = "X"
 
