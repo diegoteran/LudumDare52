@@ -59,7 +59,10 @@ func startLevel():
 	spawnEnemies(enemy_count[level_num])
 	
 	# TODO: FIX
-	SoundFx.play_music("what_must_be_done")
+	if randi()%2 == 0:
+		SoundFx.play_music("what_must_be_done")
+	else:
+		SoundFx.play_music("what_lurks_below")
 	level_num += 1
 	run_started = true
 	

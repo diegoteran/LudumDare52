@@ -719,18 +719,20 @@ margin_left = 11.0
 margin_top = 263.0
 margin_right = 260.0
 margin_bottom = 303.0
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="Finish"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = -5.0
+margin_top = -8.0
+margin_right = 343.0
+margin_bottom = 26.0
 text = "Do what must be done"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Finish"]
-margin_left = 201.0
-margin_top = 2.0
-margin_right = 378.0
-margin_bottom = 21.0
+margin_left = -5.0
+margin_top = -40.0
+margin_right = 257.0
+margin_bottom = 20.0
 text = "COST: 25 of Each"
 
 [connection signal="pressed" from="Stat Upgrades/HealthUpgrade/Button" to="." method="_on_health_button_pressed"]

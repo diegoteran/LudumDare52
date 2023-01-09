@@ -185,6 +185,7 @@ tracks/3/keys = {
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 ENEMY_PROJECTILE = ExtResource( 6 )
+MAX_HP = 3
 DISTANCE_FROM_PLAYER = 200
 ATTACK_COOLDOWN_RANGE = 1.0
 DROP_CHANCE = 0.7

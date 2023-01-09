@@ -27,7 +27,9 @@ func _process(delta):
 		Globals.get_player().get_node("Weapon").projectileAliveTime = 3
 		Globals.get_player().get_node("Weapon").projectileSpeed = 1000
 		Globals.get_player().get_node("Weapon").spray = 360
-		pass
+		ResearchManager.puffer_lungs += 25;
+		ResearchManager.scorpion_tails += 25;
+		ResearchManager.slime_skin += 25;
 	if Input.is_action_just_pressed("mute"):
 		print("muting")
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), -500)
@@ -110,4 +112,5 @@ func change_to_dungeon():
 	
 func change_to_end():
 	clear_entities()
+	SoundFx.play_music("what_it_was_done_for")
 	get_tree().change_scene("res://menus/EndScreen.tscn")

@@ -17,15 +17,15 @@ var TAIL_COST = [5,10,20]
 var SCALPEL_DMG_STEP = 1
 
 var health_upgrades = 0
-var health_step = 2
+var health_step = 1
 var HEALTH_COST = [1, 3, 5, 10, 50, 100]
 
 var speed_upgrades = 0
-var speed_step = 5
+var speed_step = 50
 var SPEED_COST = [1, 3, 5, 10, 50, 100]
 
 var dash_upgrades = 0
-var dash_step = 5
+var dash_step = 1
 var DASH_COST = [1, 3, 5, 10, 50, 100]
 
 var FINAL_COST = 25
@@ -49,6 +49,4 @@ func apply_upgrades():
 	
 	player.MAX_HEALTH += health_upgrades*health_step
 	player.MAX_SPEED += speed_upgrades*speed_step
-	# TODO figure out dash stuff
-	
-	# Add rest
+	player.MAX_DASH += dash_upgrades*dash_step

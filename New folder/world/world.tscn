@@ -201,7 +201,7 @@ current = true
 limit_left = -16
 limit_top = -64
 limit_right = 1296
-limit_bottom = 714
+limit_bottom = 640
 smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="."]

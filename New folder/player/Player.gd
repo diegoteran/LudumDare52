@@ -6,7 +6,7 @@ export var FRICTION = 4000
 export var ATTACK_SPEED = 15
 export var MAX_HEALTH = 3
 export var HEALTH_REGEN = 0
-export var MAX_DASH = 1
+export var MAX_DASH = 0
 export var DASH_COOLDOWN = 2
 export var DASH_SPEED = 400
 

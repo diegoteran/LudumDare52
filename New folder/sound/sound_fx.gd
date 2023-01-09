@@ -22,6 +22,8 @@ var sounds = {
 
 var music ={
 	"what_must_be_done" : load(music_path + "what_must_be_done.wav"),
+	"what_it_was_done_for" : load(music_path + "what_it_was_done_for.wav"),
+	"what_lurks_below" : load(music_path + "what_lurks_below.wav"),
 	"where_does_this_path_lead" : load(music_path + "where_does_this_path_lead.wav"),
 }
 

@@ -12,7 +12,7 @@ func apply_upgrade():
 	
 	weapon.projectileDmg *= 1.5
 	weapon.projectileSpeed *= 1.5
-	player.MAX_HEALTH -= 3
+	player.MAX_HEALTH = max(1, player.MAX_HEALTH - 3)
 	player.set_health(min(player.MAX_HEALTH, player.health))
 	
 
