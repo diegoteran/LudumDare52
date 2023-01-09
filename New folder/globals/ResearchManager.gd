@@ -7,19 +7,19 @@ var scorpion_tails = 10
 
 var slime_gun_level = 0
 var SLIME_COST = [5,10,20]
-var SLIME_GUN_DMG_STEP = 5
+var SLIME_GUN_DMG_STEP = 1
 
 var blow_gun_level = 0
 var LUNG_COST = [5,10,20]
-var BLOW_GUN_DMG_STEP = 5
+var BLOW_GUN_DMG_STEP = 1
 
 var mosquito_rapier_level = 0
 var BLOOD_COST = [5,10,20]
-var RAPIER_DMG_STEP = 5
+var RAPIER_DMG_STEP = 1
 
 var scalpel_level = 1
 var TAIL_COST = [5,10,20]
-var SCALPEL_DMG_STEP = 5
+var SCALPEL_DMG_STEP = 1
 
 var health_upgrades = 0
 var health_step = 2
@@ -37,6 +37,16 @@ var dash_upgrades = 0
 var dash_step = 5
 var DASH_COST = [1, 3, 5, 10, 50, 100]
 
+var weaponUpgradeStepDict = {
+	"scalpel" : SCALPEL_DMG_STEP,
+	"slimegun" : SLIME_GUN_DMG_STEP
+}
+
+func weaponToUpgradeLevel(weapon):
+	if weapon == "scalpel":
+		return scalpel_level
+	elif weapon == "slimegun":
+		return slime_gun_level
 
 func apply_upgrades():
 	var player = Globals.get_player()

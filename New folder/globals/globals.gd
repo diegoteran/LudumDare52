@@ -12,7 +12,6 @@ var weapon = "scalpel"
 var weaponDict = {
 	"scalpel" : preload("res://projectiles/weapon_scalpel.tscn"),
 	"slimegun" : preload("res://projectiles/weapon_slime.tscn")
-	
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -42,6 +41,9 @@ func set_player(player_ref):
 func apply_weapon():
 	player.WEAPON = weaponDict[weapon]
 	player.add_weapon()
+	player.get_node("Weapon").projectileDmg += (ResearchManager.weaponToUpgradeLevel(weapon)-1)*ResearchManager.weaponUpgradeStepDict[weapon]
+	print(player.get_node("Weapon").projectileDmg)
+	
 		
 
 func get_player():
