@@ -52,7 +52,8 @@ func set_hp(new_value):
 func _ready():
 	set_attack_cooldown()
 	player = Globals.get_player()
-	$HealthBar.max_value = MAX_HP
+	healthBar.max_value = MAX_HP
+#	healthBar.rect.position.y -= sprite.texture.get_size().y
 
 func set_attack_cooldown():
 	attackTimer.start(ATTACK_COOLDOWN + (rand_range(-ATTACK_COOLDOWN_RANGE, ATTACK_COOLDOWN_RANGE)))

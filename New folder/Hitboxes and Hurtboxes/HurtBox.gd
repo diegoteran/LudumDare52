@@ -20,6 +20,7 @@ func set_invincible(value):
 
 func start_invincibility(duration):
 	in_timer = true
+	set_deferred("monitorable", false)
 	self.invincible = true
 	timer.start(duration)
 
@@ -33,6 +34,7 @@ func start_invincibility(duration):
 func _on_Timer_timeout():
 	self.invincible = false
 	in_timer = false
+	set_deferred("monitorable", true)
 
 
 func _on_HurtBox_invincibility_ended():

@@ -4,7 +4,7 @@
 [ext_resource path="res://pickups/pufferLungDrop.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/programmerArt/lung.png" type="Texture" id=3]
 
-[node name="pickup" instance=ExtResource( 1 )]
+[node name="pickup2" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]

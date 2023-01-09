@@ -24,6 +24,7 @@ enum {
 }
 
 onready var debug = $Debug
+onready var hurtBox = $HurtBox
 
 var state = MOVE
 var velocity = Vector2.ZERO
@@ -40,9 +41,16 @@ func set_health(value):
 		on_death()
 
 func on_death():
+	
+	if state == DEAD:
+		return
 	print("player died")
 	Globals.change_to_run_end()
 	SoundFx.play("dead", global_position)
+	SoundFx.play_menu("game_over_cadence")
+	SoundFx.fade_out()
+	
+	state = DEAD
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -114,3 +122,5 @@ func _on_HurtBox_area_entered(area):
 	knockback += area.knockback * area.knockbackDirection * 0.1
 	area.get_parent().hit_something()
 	SoundFx.play("hurt", global_position, rand_range(0.8, 1.2))
+	Shake.shake(3, 1)
+	hurtBox.start_invincibility(2)

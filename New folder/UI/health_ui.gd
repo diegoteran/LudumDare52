@@ -9,4 +9,4 @@ func _ready():
 
 func set_hp(value):
 	print("setting to " + str(value))
-	texture.rect_size.x = 24 * value
+	texture.rect_size.x = texture.texture.get_size().x * value

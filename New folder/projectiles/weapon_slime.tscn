@@ -5,9 +5,9 @@
 
 [node name="Weapon" instance=ExtResource( 1 )]
 projectile = ExtResource( 2 )
-projectileSpeed = 400
+projectileSpeed = 300
 projectileDmg = 2
-projectileAliveTime = 1.0
+projectileAliveTime = 0.5
 projectileCritDmg = 4
 projectileCritChance = 0.2
 projectileKnockback = 10

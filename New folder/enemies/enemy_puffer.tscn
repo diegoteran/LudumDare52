@@ -191,7 +191,6 @@ DROP_CHANCE = 0.7
 drop = ExtResource( 7 )
 
 [node name="Sprite" parent="." index="1"]
-self_modulate = Color( 1, 1, 1, 1 )
 position = Vector2( 1, 14 )
 texture = ExtResource( 2 )
 offset = Vector2( -1, -24 )
@@ -208,6 +207,12 @@ position = Vector2( 3, -15 )
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, 9 )
+
+[node name="HealthBar" parent="." index="6"]
+margin_left = -22.0
+margin_top = -40.0
+margin_right = 24.0
+margin_bottom = -35.0
 
 [node name="AnimationPlayer" parent="." index="7"]
 anims/Attack = SubResource( 1 )

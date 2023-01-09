@@ -3,6 +3,8 @@ extends Node
 var sounds_path = "res://sound/sounds/"
 var music_path = "res://sound/music/"
 
+onready var tween = $Music/Tween
+
 # Keep sorted please
 var sounds = {
 	"dead" : load(sounds_path + "dead.wav"),
@@ -16,15 +18,20 @@ var sounds = {
 	"scorpion_slash" : load(sounds_path + "scorpion_slash.wav"),
 	"select" : load(sounds_path + "select.wav"),
 	"slime_jump" : load(sounds_path + "slime_jump.wav"),
+	"victory_cadence" : load(sounds_path + "victory_cadence.wav"),
+	"game_over_cadence" : load(sounds_path + "game_over_cadence.wav"),
 }
 
 var music ={
 	"what_must_be_done" : load(music_path + "what_must_be_done.wav"),
+	"where_does_this_path_lead" : load(music_path + "where_does_this_path_lead.wav"),
 }
 
 onready var sound_players = get_node("2D").get_children()
 onready var sound_players_menu = get_node("Menu").get_children()
 onready var music_player = $Music/AudioStreamPlayer
+
+var queued_track : String
 
 func play(sound_string, from_location, pitch_scale = 1, volume_db = 0):
 	for soundPlayer in sound_players:
@@ -48,10 +55,21 @@ func play_menu(sound_string, pitch_scale = 1, volume_db = 0):
 			return
 	print("Too many sounds playing for menu at once.")
 
-func play_music(sound_string, pitch_scale = 1, volume_db = 0):
-	if not music_player.playing:
-		music_player.pitch_scale = pitch_scale
-		music_player.volume_db = volume_db
-		music_player.stream = music[sound_string]
-		music_player.play()
-		return
+func play_music(sound_string):
+	queued_track = sound_string
+	if music_player.playing:
+		fade_out()
+	else:
+		start_music()
+
+func start_music():
+	music_player.stream = music[queued_track]
+	music_player.play()
+
+func fade_out():
+	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.start()
+
+func _on_Tween_tween_completed(object, _key):
+	object.stop()
+	object.volume_db = 0
