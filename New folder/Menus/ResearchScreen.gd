@@ -24,18 +24,21 @@ onready var scalpel_level_label = $"Weapon Upgrades/ScalpelGun/levelLabel"
 onready var scalpel_locked = $"Weapon Upgrades/ScalpelGun/lockedLabel"
 onready var scalpel_equip = $"Weapon Upgrades/ScalpelGun/equip"
 onready var scalpel_purchase = $"Weapon Upgrades/ScalpelGun/buyButton"
+onready var scalpel_cost = $"Weapon Upgrades/ScalpelGun/cost"
 
 onready var slime_gun_level = $"Weapon Upgrades/SlimeGun/currentLevel"
 onready var slime_gun_level_label = $"Weapon Upgrades/SlimeGun/levelLabel"
 onready var slime_gun_locked = $"Weapon Upgrades/SlimeGun/lockedLabel"
 onready var slime_gun_equip = $"Weapon Upgrades/SlimeGun/equip"
 onready var slime_gun_purchase = $"Weapon Upgrades/SlimeGun/buyButton"
+onready var slime_gun_cost = $"Weapon Upgrades/SlimeGun/cost"
 
 onready var blow_gun_level = $"Weapon Upgrades/BlowGun/currentLevel"
 onready var blow_gun_level_label = $"Weapon Upgrades/BlowGun/levelLabel"
 onready var blow_gun_locked = $"Weapon Upgrades/BlowGun/lockedLabel"
 onready var blow_gun_equip = $"Weapon Upgrades/BlowGun/equip"
 onready var blow_gun_purchase = $"Weapon Upgrades/BlowGun/buyButton"
+onready var blow_gun_cost = $"Weapon Upgrades/BlowGun/cost"
 
 onready var stat_upgrades = $"Stat Upgrades"
 onready var weapon_upgrades = $"Weapon Upgrades"
@@ -87,7 +90,8 @@ func update_values():
 		slime_gun_level_label.visible = true
 		slime_gun_level.text = str(ResearchManager.slime_gun_level)
 		slime_gun_equip.visible = true
-
+	slime_gun_cost.text = str(ResearchManager.SLIME_COST[min(ResearchManager.slime_gun_level, len(ResearchManager.SLIME_COST)-1)])
+	
 	if ResearchManager.scalpel_level == 0:
 		scalpel_locked.visible = true
 		scalpel_level.visible = false
@@ -99,6 +103,7 @@ func update_values():
 		scalpel_level_label.visible = true
 		scalpel_level.text = str(ResearchManager.scalpel_level)
 		scalpel_equip.visible = true
+	scalpel_cost.text = str(ResearchManager.TAIL_COST[min(ResearchManager.scalpel_level, len(ResearchManager.TAIL_COST)-1)])
 
 	if ResearchManager.blow_gun_level == 0:
 		blow_gun_locked.visible = true
@@ -111,6 +116,7 @@ func update_values():
 		blow_gun_level_label.visible = true
 		blow_gun_level.text = str(ResearchManager.blow_gun_level)
 		blow_gun_equip.visible = true
+	blow_gun_cost.text = str(ResearchManager.LUNG_COST[min(ResearchManager.blow_gun_level, len(ResearchManager.LUNG_COST)-1)])
 
 func _on_Button_pressed():
 	Globals.change_to_dungeon()
