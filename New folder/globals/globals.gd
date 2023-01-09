@@ -22,16 +22,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if Input.is_action_pressed("debug"):
-		Globals.get_player().get_node("Weapon").projectileDmg = 10000
-		Globals.get_player().get_node("Weapon").automatic = true
-		Globals.get_player().get_node("Weapon").fireRate = 0.001
-		Globals.get_player().get_node("Weapon").projectileAliveTime = 3
-		Globals.get_player().get_node("Weapon").projectileSpeed = 1000
-		Globals.get_player().get_node("Weapon").spray = 360
-		ResearchManager.puffer_lungs += 25;
-		ResearchManager.scorpion_tails += 25;
-		ResearchManager.slime_skin += 25;
 	if Input.is_action_just_pressed("mute"):
 		print("muting")
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), -500)

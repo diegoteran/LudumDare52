@@ -26,7 +26,7 @@ __meta__ = {
 visible = false
 margin_right = 649.0
 margin_bottom = 374.0
-color = Color( 0.509804, 0.305882, 0.368627, 1 )
+color = Color( 0.647059, 0.184314, 0.188235, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -35,7 +35,7 @@ __meta__ = {
 visible = false
 margin_right = 649.0
 margin_bottom = 374.0
-color = Color( 0.427451, 0.588235, 0.231373, 1 )
+color = Color( 0.286275, 0.509804, 0.4, 1 )
 __meta__ = {
 "_edit_lock_": true
 }

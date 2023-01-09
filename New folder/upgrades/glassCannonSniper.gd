@@ -2,7 +2,7 @@ extends "res://upgrades/UpgradeBase.gd"
 
 func setValues():
 	upgradeName = "Glass Cannon Sniper"
-	description  = "Triple your weapons damage and attack speed, but lose 3 health"
+	description  = "Triple your weapons damage and attack speed, but lose 3 health or go to 1 health"
 	iconPath = "res://assets/art/programmerArt/greenHealthIGuess.png"
 	.setValues()
 
