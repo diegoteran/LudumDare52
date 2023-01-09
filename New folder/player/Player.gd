@@ -2,11 +2,13 @@ extends KinematicBody2D
 
 export var ACCELERATION = 1000
 export var MAX_SPEED = 170
-export var ROLL_SPEED = 130
 export var FRICTION = 4000
 export var ATTACK_SPEED = 15
 export var MAX_HEALTH = 3
 export var HEALTH_REGEN = 0
+export var MAX_DASH = 1
+export var DASH_COOLDOWN = 2
+export var DASH_SPEED = 400
 
 export var WEAPON: PackedScene
 export var WALK_EFFECT: PackedScene
@@ -19,7 +21,7 @@ var fixedHealth = false
 enum {
 	IDLE,
 	MOVE,
-	ROLL,
+	DASH,
 	ATTACK,
 	DEAD,
 	PAUSED
@@ -32,9 +34,12 @@ onready var animationPlayer = $AnimationPlayer
 var state = MOVE
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+var dash_cd = 0
+var dashes = MAX_DASH setget set_dashes
 onready var sprite = $Sprite
 
 signal health_changed(value)
+signal dash_changed(value)
 
 func set_health(value):
 	health = value
@@ -42,6 +47,10 @@ func set_health(value):
 	print("healthhh " + str(value))
 	if health <= 0:
 		on_death()
+
+func set_dashes(value):
+	dashes = value
+	emit_signal("dash_changed", value)
 
 func on_death():
 	
@@ -72,12 +81,20 @@ func _physics_process(delta):
 		return
 	debug.text = str(state)
 	
+	if dash_cd > 0:
+		dash_cd -= delta
+		if dash_cd <= 0:
+			self.dashes = min(dashes + 1, MAX_DASH)
+			print("gained dash " + str(dashes))
+	if dash_cd <= 0 and dashes < MAX_DASH:
+		dash_cd = DASH_COOLDOWN
+			
 	match(state):
 		MOVE:
 			animationPlayer.play("Move")
 			move_state(delta)
-#		ROLL:
-#			roll_state(delta)
+		DASH:
+			dash_state(delta)
 	
 	move()
 	
@@ -95,14 +112,26 @@ func _process(delta):
 			$Weapon.shoot(direction)
 		else:
 			$Weapon.auto_shoot(direction)
+	
+	if Input.is_action_pressed("dash") and dashes > 0 and state != DASH:
+		state = DASH
+		self.dashes -= 1
+		print("lost dash, total: " + str(dashes))
 
 
 func move():
 	velocity = move_and_slide(velocity)
 	sprite.flip_h = global_position.direction_to(get_global_mouse_position()).x < 0
 	
-	if velocity == Vector2.ZERO:
+	if velocity == Vector2.ZERO and state == MOVE:
 		animationPlayer.play("Idle")
+
+func dash_state(delta):
+	animationPlayer.play("Dash")
+	velocity = velocity.normalized() * DASH_SPEED
+
+func end_dash():
+	state = MOVE
 
 func move_state(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
