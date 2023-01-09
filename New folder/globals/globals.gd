@@ -45,9 +45,7 @@ func apply_weapon():
 	player.WEAPON = weaponDict[weapon]
 	player.add_weapon()
 	player.get_node("Weapon").projectileDmg += (ResearchManager.weaponToUpgradeLevel(weapon)-1)*ResearchManager.weaponUpgradeStepDict[weapon]
-	print(player.get_node("Weapon").projectileDmg)
-	
-		
+
 
 func get_player():
 	return player

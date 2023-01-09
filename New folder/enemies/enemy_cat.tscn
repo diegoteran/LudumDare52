@@ -191,7 +191,7 @@ tracks/3/keys = {
 script = ExtResource( 3 )
 ENEMY_PROJECTILE = ExtResource( 6 )
 MAX_HP = 7
-DROP_CHANCE = 0.6
+DROP_CHANCE = 0.7
 drop = ExtResource( 7 )
 
 [node name="Sprite" parent="." index="1"]

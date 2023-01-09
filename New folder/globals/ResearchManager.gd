@@ -21,7 +21,7 @@ var health_step = 1
 var HEALTH_COST = [1, 3, 5, 10, 50, 100]
 
 var speed_upgrades = 0
-var speed_step = 50
+var speed_step = 25
 var SPEED_COST = [1, 3, 5, 10, 50, 100]
 
 var dash_upgrades = 0

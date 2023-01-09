@@ -53,6 +53,7 @@ func _ready():
 	set_attack_cooldown()
 	player = Globals.get_player()
 	healthBar.max_value = MAX_HP
+	hp = MAX_HP
 #	healthBar.rect.position.y -= sprite.texture.get_size().y
 
 func set_attack_cooldown():

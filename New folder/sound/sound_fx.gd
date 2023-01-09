@@ -69,7 +69,7 @@ func start_music():
 	queued_track = ""
 
 func fade_out():
-	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
 
 func _on_Tween_tween_completed(object, _key):
