@@ -1,7 +1,6 @@
 extends Control
 
 onready var skin_count = $Inventory/SkinCurrency/count
-onready var blood_count = $Inventory/BloodCurrency/count
 onready var tail_count = $Inventory/TailCurrency/count
 onready var lung_count = $Inventory/LungCurrency/count
 
@@ -27,7 +26,6 @@ func _process(delta):
 
 func update_inv():
 	skin_count.text = str(ResearchManager.slime_skin)
-	blood_count.text = str(ResearchManager.blood_bags)
 	tail_count.text = str(ResearchManager.scorpion_tails)
 	lung_count.text = str(ResearchManager.puffer_lungs)
 	

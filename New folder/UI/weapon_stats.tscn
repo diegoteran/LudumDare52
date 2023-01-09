@@ -18,6 +18,9 @@ margin_left = 76.0
 margin_top = 7.0
 margin_right = 431.0
 margin_bottom = 161.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SkinCurrency" type="Control" parent="Inventory"]
 margin_left = 14.0
@@ -50,45 +53,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BloodCurrency" type="Control" parent="Inventory"]
-margin_left = 14.0
-margin_top = 47.0
-margin_right = 125.0
-margin_bottom = 54.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="count" type="RichTextLabel" parent="Inventory/BloodCurrency"]
-margin_left = 65.0
-margin_top = -5.0
-margin_right = 129.0
-margin_bottom = 47.0
-text = "0"
-scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="text" type="RichTextLabel" parent="Inventory/BloodCurrency"]
-margin_left = 1.0
-margin_top = -5.0
-margin_right = 204.0
-margin_bottom = 47.0
-text = "BLOOD:"
-scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="TailCurrency" type="Control" parent="Inventory"]
 margin_left = 14.0
-margin_top = 55.0
+margin_top = 47.0
 margin_right = 169.0
-margin_bottom = 79.0
-__meta__ = {
-"_edit_lock_": true
-}
+margin_bottom = 71.0
 
 [node name="count" type="RichTextLabel" parent="Inventory/TailCurrency"]
 margin_left = 65.0
@@ -114,12 +83,9 @@ __meta__ = {
 
 [node name="LungCurrency" type="Control" parent="Inventory"]
 margin_left = 13.0
-margin_top = 64.0
+margin_top = 56.0
 margin_right = 204.0
-margin_bottom = 108.0
-__meta__ = {
-"_edit_lock_": true
-}
+margin_bottom = 100.0
 
 [node name="count" type="RichTextLabel" parent="Inventory/LungCurrency"]
 margin_left = 65.0
@@ -158,6 +124,9 @@ margin_left = -15.0
 margin_top = 54.0
 margin_right = 303.0
 margin_bottom = 204.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Dmg" type="Control" parent="WeaponStats"]
 margin_left = 19.0
@@ -329,6 +298,9 @@ margin_left = -16.0
 margin_top = 5.0
 margin_right = 302.0
 margin_bottom = 155.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MaxHealth" type="Control" parent="PlayerStats"]
 margin_left = 19.0

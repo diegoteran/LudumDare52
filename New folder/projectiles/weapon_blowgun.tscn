@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://projectiles/weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://projectiles/projectile_blowgun.tscn" type="PackedScene" id=2]
+
+[node name="Weapon" instance=ExtResource( 1 )]
+projectile = ExtResource( 2 )
+sound_string = "slime_jump"
+projectileSpeed = 1000
+projectileDmg = 3
+projectileAliveTime = 0.1
+projectileCritDmg = 2
+projectileCritChance = 0.1
+projectileKnockback = 120
+fireRate = 2.0
+spray = 0

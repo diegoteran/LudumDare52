@@ -11,7 +11,8 @@ var weapon = "scalpel"
 
 var weaponDict = {
 	"scalpel" : preload("res://projectiles/weapon_scalpel.tscn"),
-	"slimegun" : preload("res://projectiles/weapon_slime.tscn")
+	"slimegun" : preload("res://projectiles/weapon_slime.tscn"),
+	"blowgun" : preload("res://projectiles/weapon_blowgun.tscn")
 }
 
 # Called when the node enters the scene tree for the first time.
