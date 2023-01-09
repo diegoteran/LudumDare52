@@ -19,7 +19,7 @@ func apply_upgrade():
 
 
 func _on_Button_pressed():
-	SoundFx.on_button_pressed()
+	SoundFx.on_upgrade_button_pressed()
 	apply_upgrade()
 	get_parent().get_parent().upgrade_chosen()
 	pass # Replace with function body.

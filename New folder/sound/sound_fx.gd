@@ -10,16 +10,18 @@ var sounds = {
 	"dead" : load(sounds_path + "dead.wav"),
 	"dino_mace" : load(sounds_path + "dino_mace.wav"),
 	"hit" : load(sounds_path + "hit.wav"),
+	"game_over_cadence" : load(sounds_path + "game_over_cadence.wav"),
+	"go" : load(sounds_path + "go.wav"),
 	"hurt" : load(sounds_path + "hurt.wav"),
 	"menu" : load(sounds_path + "menu.wav"),
 	"mosquito_slash" : load(sounds_path + "mosquito_slash.wav"),
 	"pufferfish_gun" : load(sounds_path + "pufferfish_gun.wav"),
 	"scalpel" : load(sounds_path + "scalpel.wav"),
 	"scorpion_slash" : load(sounds_path + "scorpion_slash.wav"),
-	"select" : load(sounds_path + "select.wav"),
+	"select" : load(sounds_path + "select_2.wav"),
 	"slime_jump" : load(sounds_path + "slime_jump.wav"),
+	"upgrade_select" : load(sounds_path + "upgrade_select.wav"),
 	"victory_cadence" : load(sounds_path + "victory_cadence.wav"),
-	"game_over_cadence" : load(sounds_path + "game_over_cadence.wav"),
 }
 
 var music ={
@@ -60,6 +62,9 @@ func play_menu(sound_string, pitch_scale = 1, volume_db = 0):
 
 func on_button_pressed():
 	play_menu("select")
+
+func on_upgrade_button_pressed():
+	play_menu("upgrade_select")
 
 func play_music(sound_string):
 	queued_track = sound_string
