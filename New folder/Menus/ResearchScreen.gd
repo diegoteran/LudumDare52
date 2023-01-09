@@ -72,7 +72,7 @@ func update_values():
 
 	slime_gun_purchase.disabled = (ResearchManager.SLIME_COST[min(ResearchManager.slime_gun_level, len(ResearchManager.SLIME_COST)-1)] > ResearchManager.slime_skin)
 	scalpel_purchase.disabled = (ResearchManager.TAIL_COST[min(ResearchManager.scalpel_level, len(ResearchManager.TAIL_COST)-1)] > ResearchManager.scorpion_tails)
-	blow_gun_purchase.disabled = (ResearchManager.LUNG_COST[min(ResearchManager.blow_gun_level, len(ResearchManager.LUNG_COST)-1)] > ResearchManager.blow_gun_level)
+	blow_gun_purchase.disabled = (ResearchManager.LUNG_COST[min(ResearchManager.blow_gun_level, len(ResearchManager.LUNG_COST)-1)] > ResearchManager.puffer_lungs)
 
 	for button in [health_button, dash_button, speed_button, slime_gun_purchase, scalpel_purchase, blow_gun_purchase]:
 		if button.disabled:

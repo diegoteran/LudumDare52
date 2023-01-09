@@ -11,6 +11,6 @@ func apply_upgrade():
 	var weapon = player.get_node("Weapon")
 	
 	weapon.projectileDmg += 2
-	weapon.recoil += 100
+	player.MAX_SPEED *= 0.5
 	
 

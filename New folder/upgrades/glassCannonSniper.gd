@@ -10,8 +10,8 @@ func apply_upgrade():
 	var player = Globals.get_player()
 	var weapon = player.get_node("Weapon")
 	
-	weapon.projectileDmg *= 3
-	weapon.projectileSpeed *= 5
+	weapon.projectileDmg *= 1.5
+	weapon.projectileSpeed *= 1.5
 	player.MAX_HEALTH -= 3
 	player.set_health(min(player.MAX_HEALTH, player.health))
 	
