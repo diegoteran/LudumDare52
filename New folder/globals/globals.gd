@@ -85,6 +85,7 @@ func clear_entities():
 func change_to_research():
 	clear_entities()
 	Globals.paused = true
+	SoundFx.play_music("where_does_this_path_lead")
 	get_tree().change_scene("res://menus/ResearchScreen.tscn")
 
 func change_to_run_end():
