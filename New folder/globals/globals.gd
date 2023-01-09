@@ -60,6 +60,11 @@ func level_camera():
 		return level_root().get_node("world/Camera2D")
 	return null
 
+func level_enemies():
+	if level_root().has_node("world"):
+		return level_root().get_node("world/YSort/Enemies")
+	return null
+
 func clear_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:

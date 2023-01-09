@@ -58,7 +58,7 @@ func _ready():
 	self.health = MAX_HEALTH
 	Globals.set_player(self)
 	var remoteTransform = RemoteTransform2D.new()
-	remoteTransform.set_remote_node(get_parent().get_node("Camera2D").get_path())
+	remoteTransform.set_remote_node(Globals.level_camera().get_path())
 	add_child(remoteTransform)
 
 func add_weapon():

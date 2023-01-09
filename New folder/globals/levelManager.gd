@@ -76,7 +76,7 @@ func spawnEnemies(numEnemies):
 	for i in range(numEnemies):
 		var index = randi()%len(enemies)
 		var newEnemy = enemies[index].instance()
-		Globals.level_root().call_deferred("add_child", newEnemy)
+		Globals.level_enemies().call_deferred("add_child", newEnemy)
 		randomlyPlace(newEnemy)
 		enemiesAlive += 1
 		
