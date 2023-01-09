@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://world/world.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/Art/tiles/Wall_corner_R.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/health_ui.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/art/programmerArt/tile.png" type="Texture" id=9]
+[ext_resource path="res://UI/weapon_stats.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -180,3 +181,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 640.0
 margin_bottom = 360.0
+
+[node name="weapon_and_inv" parent="UI" instance=ExtResource( 10 )]
