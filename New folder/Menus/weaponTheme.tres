@@ -3,9 +3,10 @@
 [ext_resource path="res://assets/fonts/upheaval/upheavtt.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 18
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 2
 font_data = ExtResource( 1 )
 
 [resource]

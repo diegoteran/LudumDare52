@@ -54,6 +54,8 @@ func _ready():
 	pass # Replace with function body.
 
 func update_values():
+	weapon_equip.text = str(Globals.weapon)
+	
 	skin_count.text = str(ResearchManager.slime_skin)
 	tail_count.text = str(ResearchManager.scorpion_tails)
 	lung_count.text = str(ResearchManager.puffer_lungs)

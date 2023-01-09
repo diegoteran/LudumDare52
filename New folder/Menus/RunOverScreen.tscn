@@ -6,6 +6,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
@@ -20,10 +22,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="loseColor" type="ColorRect" parent="."]
+visible = false
 margin_right = 649.0
 margin_bottom = 374.0
 color = Color( 0.509804, 0.305882, 0.368627, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="winColor" type="ColorRect" parent="."]
+visible = false
+margin_right = 649.0
+margin_bottom = 374.0
+color = Color( 0.427451, 0.588235, 0.231373, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -100,5 +112,29 @@ margin_bottom = 31.0
 theme = SubResource( 2 )
 text = "0"
 scroll_active = false
+
+[node name="victory" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 22.0
+margin_top = 195.0
+margin_right = 633.0
+margin_bottom = 306.0
+theme = ExtResource( 3 )
+text = "You completed the dungeon"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lose" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 22.0
+margin_top = 195.0
+margin_right = 633.0
+margin_bottom = 306.0
+theme = ExtResource( 3 )
+text = "You barely crawl out with your life"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -9,6 +9,8 @@ var paused = false;
 var luck = 0
 var weapon = "scalpel"
 
+var dungeonWin  = false
+
 var weaponDict = {
 	"scalpel" : preload("res://projectiles/weapon_scalpel.tscn"),
 	"slimegun" : preload("res://projectiles/weapon_slime.tscn"),
@@ -99,9 +101,10 @@ func change_to_research():
 	SoundFx.play_music("where_does_this_path_lead")
 	get_tree().change_scene("res://menus/ResearchScreen.tscn")
 
-func change_to_run_end():
+func change_to_run_end(success):
 	clear_entities()
 	Globals.paused = true
+	dungeonWin = success
 	get_tree().change_scene("res://menus/RunOverScreen.tscn")
 
 func change_to_dungeon():

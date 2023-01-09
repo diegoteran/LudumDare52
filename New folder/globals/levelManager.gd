@@ -31,7 +31,7 @@ func _process(delta):
 		if (len(get_tree().get_nodes_in_group("pickup")) > 0):
 			return;
 		if level_num > max_levels:
-			Globals.change_to_run_end()
+			Globals.change_to_run_end(true)
 			Globals.paused = true
 		else:
 			var upgrade1 = randi()%len(UpgradeDict.upgrades)

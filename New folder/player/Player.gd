@@ -59,11 +59,10 @@ func on_death():
 	print("player died")
 	
 	SoundFx.play("dead", global_position)
-	SoundFx.play_menu("game_over_cadence")
 	SoundFx.fade_out()
 	
 	state = DEAD
-	Globals.change_to_run_end()
+	Globals.change_to_run_end(false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

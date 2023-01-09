@@ -31,10 +31,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="Inventory/SkinCurrency"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -46,6 +48,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "SKIN:"
 scroll_active = false
 __meta__ = {
@@ -59,10 +62,12 @@ margin_right = 169.0
 margin_bottom = 71.0
 
 [node name="count" type="RichTextLabel" parent="Inventory/TailCurrency"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -74,6 +79,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "TAILS:"
 scroll_active = false
 __meta__ = {
@@ -87,10 +93,12 @@ margin_right = 204.0
 margin_bottom = 100.0
 
 [node name="count" type="RichTextLabel" parent="Inventory/LungCurrency"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -102,6 +110,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "LUNGS:"
 scroll_active = false
 __meta__ = {
@@ -109,10 +118,12 @@ __meta__ = {
 }
 
 [node name="title" type="RichTextLabel" parent="Inventory"]
+modulate = Color( 0.431373, 0.541176, 0.737255, 1 )
 margin_left = 15.0
 margin_top = 22.0
 margin_right = 83.0
 margin_bottom = 37.0
+rect_clip_content = false
 text = "Inventory"
 __meta__ = {
 "_edit_lock_": true
@@ -137,10 +148,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="WeaponStats/Dmg"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -152,6 +165,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "DMG:"
 scroll_active = false
 __meta__ = {
@@ -168,10 +182,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="WeaponStats/CritDmg"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -183,6 +199,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Crit:"
 scroll_active = false
 __meta__ = {
@@ -199,10 +216,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="WeaponStats/CritChance"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -214,6 +233,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Critchance:"
 scroll_active = false
 __meta__ = {
@@ -230,10 +250,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="WeaponStats/WeaponSpeed"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -245,6 +267,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "SpD:"
 scroll_active = false
 __meta__ = {
@@ -261,10 +284,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="WeaponStats/FireRate"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -276,6 +301,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Fire Rate:"
 scroll_active = false
 __meta__ = {
@@ -283,10 +309,12 @@ __meta__ = {
 }
 
 [node name="title" type="RichTextLabel" parent="WeaponStats"]
+modulate = Color( 0.431373, 0.541176, 0.737255, 1 )
 margin_left = 17.0
 margin_top = 24.0
 margin_right = 195.0
 margin_bottom = 64.0
+rect_clip_content = false
 text = "SCALPEL"
 __meta__ = {
 "_edit_lock_": true
@@ -311,10 +339,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="PlayerStats/MaxHealth"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -326,6 +356,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Max Health"
 scroll_active = false
 __meta__ = {
@@ -342,10 +373,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="PlayerStats/Heals"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -357,6 +390,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Healing"
 scroll_active = false
 __meta__ = {
@@ -373,10 +407,12 @@ __meta__ = {
 }
 
 [node name="count" type="RichTextLabel" parent="PlayerStats/Speed"]
+modulate = Color( 0.431373, 0.65098, 0.65098, 1 )
 margin_left = 65.0
 margin_top = -5.0
 margin_right = 129.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "0"
 scroll_active = false
 __meta__ = {
@@ -388,6 +424,7 @@ margin_left = 1.0
 margin_top = -5.0
 margin_right = 204.0
 margin_bottom = 47.0
+rect_clip_content = false
 text = "Max Speed"
 scroll_active = false
 __meta__ = {
@@ -395,10 +432,12 @@ __meta__ = {
 }
 
 [node name="title" type="RichTextLabel" parent="PlayerStats"]
+modulate = Color( 0.431373, 0.541176, 0.737255, 1 )
 margin_left = 17.0
 margin_top = 24.0
 margin_right = 195.0
 margin_bottom = 64.0
+rect_clip_content = false
 text = "PlayerStats"
 __meta__ = {
 "_edit_lock_": true
