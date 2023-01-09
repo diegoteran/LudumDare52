@@ -1,0 +1,434 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/weapon_stats.gd" type="Script" id=3]
+
+[node name="weapon_and_inv" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Inventory" type="Control" parent="."]
+margin_left = 76.0
+margin_top = 7.0
+margin_right = 431.0
+margin_bottom = 161.0
+
+[node name="SkinCurrency" type="Control" parent="Inventory"]
+margin_left = 14.0
+margin_top = 38.0
+margin_right = 103.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="Inventory/SkinCurrency"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="Inventory/SkinCurrency"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "SKIN:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BloodCurrency" type="Control" parent="Inventory"]
+margin_left = 14.0
+margin_top = 47.0
+margin_right = 125.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="Inventory/BloodCurrency"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="Inventory/BloodCurrency"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "BLOOD:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TailCurrency" type="Control" parent="Inventory"]
+margin_left = 14.0
+margin_top = 55.0
+margin_right = 169.0
+margin_bottom = 79.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="Inventory/TailCurrency"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="Inventory/TailCurrency"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "TAILS:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LungCurrency" type="Control" parent="Inventory"]
+margin_left = 13.0
+margin_top = 64.0
+margin_right = 204.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="Inventory/LungCurrency"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="Inventory/LungCurrency"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "LUNGS:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="RichTextLabel" parent="Inventory"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 83.0
+margin_bottom = 37.0
+text = "Inventory"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WeaponStats" type="Control" parent="."]
+margin_left = -15.0
+margin_top = 54.0
+margin_right = 303.0
+margin_bottom = 204.0
+
+[node name="Dmg" type="Control" parent="WeaponStats"]
+margin_left = 19.0
+margin_top = 38.0
+margin_right = 210.0
+margin_bottom = 82.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="WeaponStats/Dmg"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="WeaponStats/Dmg"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "DMG:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CritDmg" type="Control" parent="WeaponStats"]
+margin_left = 19.0
+margin_top = 48.0
+margin_right = 210.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="WeaponStats/CritDmg"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="WeaponStats/CritDmg"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Crit:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CritChance" type="Control" parent="WeaponStats"]
+margin_left = 19.0
+margin_top = 58.0
+margin_right = 210.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="WeaponStats/CritChance"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="WeaponStats/CritChance"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Critchance:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WeaponSpeed" type="Control" parent="WeaponStats"]
+margin_left = 20.0
+margin_top = 69.0
+margin_right = 211.0
+margin_bottom = 113.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="WeaponStats/WeaponSpeed"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="WeaponStats/WeaponSpeed"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "SpD:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireRate" type="Control" parent="WeaponStats"]
+margin_left = 20.0
+margin_top = 81.0
+margin_right = 211.0
+margin_bottom = 125.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="WeaponStats/FireRate"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="WeaponStats/FireRate"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Fire Rate:"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="RichTextLabel" parent="WeaponStats"]
+margin_left = 17.0
+margin_top = 24.0
+margin_right = 195.0
+margin_bottom = 64.0
+text = "SCALPEL"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerStats" type="Control" parent="."]
+margin_left = -16.0
+margin_top = 5.0
+margin_right = 302.0
+margin_bottom = 155.0
+
+[node name="MaxHealth" type="Control" parent="PlayerStats"]
+margin_left = 19.0
+margin_top = 38.0
+margin_right = 210.0
+margin_bottom = 82.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="PlayerStats/MaxHealth"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="PlayerStats/MaxHealth"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Max Health"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Heals" type="Control" parent="PlayerStats"]
+margin_left = 19.0
+margin_top = 48.0
+margin_right = 210.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="PlayerStats/Heals"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="PlayerStats/Heals"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Healing"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Speed" type="Control" parent="PlayerStats"]
+margin_left = 19.0
+margin_top = 58.0
+margin_right = 210.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="count" type="RichTextLabel" parent="PlayerStats/Speed"]
+margin_left = 65.0
+margin_top = -5.0
+margin_right = 129.0
+margin_bottom = 47.0
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text" type="RichTextLabel" parent="PlayerStats/Speed"]
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 47.0
+text = "Max Speed"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="RichTextLabel" parent="PlayerStats"]
+margin_left = 17.0
+margin_top = 24.0
+margin_right = 195.0
+margin_bottom = 64.0
+text = "PlayerStats"
+__meta__ = {
+"_edit_lock_": true
+}

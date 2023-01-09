@@ -59,6 +59,7 @@ func set_attack_cooldown():
 	attackTimer.start(ATTACK_COOLDOWN + (rand_range(-ATTACK_COOLDOWN_RANGE, ATTACK_COOLDOWN_RANGE)))
 
 func _physics_process(delta):
+
 	if Globals.paused:
 		return
 	debug.text = str(state)
@@ -66,6 +67,8 @@ func _physics_process(delta):
 	if state == DEAD:
 		return
 	
+	if !is_instance_valid(player):
+		return
 	sprite.flip_h = global_position.direction_to(player.global_position).x > 0
 	
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
