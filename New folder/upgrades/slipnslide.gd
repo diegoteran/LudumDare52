@@ -10,8 +10,8 @@ func apply_upgrade():
 	var player = Globals.get_player()
 	var weapon = player.get_node("Weapon")
 	
-	player.MAX_SPEED *= 2
-	player.FRICTION /= 3
+	player.MAX_SPEED +=  player.MAX_SPEED * 0.5
+	player.FRICTION -= player.FRICTION * 0.2
 	player.FRICTION = max(player.FRICTION, 200)
 	
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cat_tile.png-1b95a9ffa8107687b1ab2f691e74082c.stex"
+path="res://.import/Cat_tail.png-c6f010ea6f80014ddc77e977fd35c46e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Art/enemies/Cat_tile.png"
-dest_files=[ "res://.import/Cat_tile.png-1b95a9ffa8107687b1ab2f691e74082c.stex" ]
+source_file="res://assets/art/Art/enemies/Cat_tail.png"
+dest_files=[ "res://.import/Cat_tail.png-c6f010ea6f80014ddc77e977fd35c46e.stex" ]
 
 [params]
 
