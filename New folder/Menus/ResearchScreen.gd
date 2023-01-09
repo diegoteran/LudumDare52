@@ -28,11 +28,13 @@ onready var scalpel_level = $"Weapon Upgrades/ScalpelGun/currentLevel"
 onready var scalpel_level_label = $"Weapon Upgrades/ScalpelGun/levelLabel"
 onready var scalpel_locked = $"Weapon Upgrades/ScalpelGun/lockedLabel"
 onready var scalpel_equip = $"Weapon Upgrades/ScalpelGun/equip"
+onready var scalpel_purchase = $"Weapon Upgrades/ScalpelGun/buyButton"
 
 onready var slime_gun_level = $"Weapon Upgrades/SlimeGun/currentLevel"
 onready var slime_gun_level_label = $"Weapon Upgrades/SlimeGun/levelLabel"
 onready var slime_gun_locked = $"Weapon Upgrades/SlimeGun/lockedLabel"
 onready var slime_gun_equip = $"Weapon Upgrades/SlimeGun/equip"
+onready var slime_gun_purchase = $"Weapon Upgrades/SlimeGun/buyButton"
 
 onready var stat_upgrades = $"Stat Upgrades"
 onready var weapon_upgrades = $"Weapon Upgrades"
@@ -64,11 +66,15 @@ func update_values():
 	dash_button.disabled = (ResearchManager.DASH_COST[min(ResearchManager.dash_upgrades, len(ResearchManager.DASH_COST)-1)] > ResearchManager.scorpion_tails)
 	speed_button.disabled = (ResearchManager.SPEED_COST[min(ResearchManager.speed_upgrades, len(ResearchManager.SPEED_COST)-1)] > ResearchManager.puffer_lungs)
 
-	for button in [health_button, heals_button, dash_button, speed_button]:
+	slime_gun_purchase.disabled = (ResearchManager.SLIME_COST[min(ResearchManager.slime_gun_level, len(ResearchManager.SLIME_COST)-1)] > ResearchManager.slime_skin)
+	scalpel_purchase.disabled = (ResearchManager.TAIL_COST[min(ResearchManager.scalpel_level, len(ResearchManager.TAIL_COST)-1)] > ResearchManager.scorpion_tails)
+
+	for button in [health_button, heals_button, dash_button, speed_button, slime_gun_purchase, scalpel_purchase]:
 		if button.disabled:
 			button.text = "NOT ENOUGH"
 		else:
 			button.text = "PURCHASE"
+
 
 	if ResearchManager.slime_gun_level == 0:
 		slime_gun_locked.visible = true
